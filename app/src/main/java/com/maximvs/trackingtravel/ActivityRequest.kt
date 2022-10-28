@@ -38,6 +38,7 @@ class ActivityRequest : AppCompatActivity() {
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
+
     private fun onGotGeoPermissionResult(granted: Boolean) {
         if (granted) {
             onGeoPermissionGranted()
