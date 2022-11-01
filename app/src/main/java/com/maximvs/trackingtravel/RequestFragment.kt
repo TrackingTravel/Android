@@ -5,17 +5,21 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
-import com.maximvs.trackingtravel.databinding.ActivityRequestBinding
+import com.maximvs.trackingtravel.databinding.FragmentRequestBinding
 
-class ActivityRequest : AppCompatActivity() {
+
+class RequestFragment : Fragment() {
+    private lateinit var binding: FragmentRequestBinding
 
     @RequiresApi(Build.VERSION_CODES.M)
 
@@ -26,15 +30,14 @@ class ActivityRequest : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.M)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        val binding = ActivityRequestBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = FragmentRequestBinding.inflate(inflater, container, false)
 
         binding.requestGeoPermissionButton.setOnClickListener {
             requestGeoPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
         }
+
+        return binding.root
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -74,5 +77,9 @@ class ActivityRequest : AppCompatActivity() {
 
     private fun onGeoPermissionGranted() {
         Toast.makeText(this, "Геолокация включена", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 }

@@ -12,9 +12,19 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnBtn.setOnClickListener(View.OnClickListener {
-            val intent = Intent(this@MainActivity, ActivityRequest::class.java)
-            startActivity(intent)
-        })
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.fragment_container, StartFragment())
+            .addToBackStack(null)
+            .commit()
+
+    }
+
+    fun startRequestFragment (){
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, RequestFragment())
+            .addToBackStack(null)
+            .commit()
     }
 }
