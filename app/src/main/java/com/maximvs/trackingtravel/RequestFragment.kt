@@ -16,19 +16,20 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import com.maximvs.trackingtravel.databinding.FragmentRequestBinding
+import java.sql.Wrapper
 
 
 class RequestFragment : Fragment() {
     private lateinit var binding: FragmentRequestBinding
 
-    @RequiresApi(Build.VERSION_CODES.M)
+    //@RequiresApi(Build.VERSION_CODES.M)
 
     private val requestGeoPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission(),
         ::onGotGeoPermissionResult
     )
 
-    @RequiresApi(Build.VERSION_CODES.M)
+    //@RequiresApi(Build.VERSION_CODES.M)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentRequestBinding.inflate(inflater, container, false)
@@ -37,10 +38,14 @@ class RequestFragment : Fragment() {
             requestGeoPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
         }
 
+        binding.startButton.setOnClickListener {
+            (activity as MainActivity).startRouteFragment()
+        }
+
         return binding.root
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
+   // @RequiresApi(Build.VERSION_CODES.M)
 
     private fun onGotGeoPermissionResult(granted: Boolean) {
         if (granted) {
@@ -49,7 +54,7 @@ class RequestFragment : Fragment() {
             if (!shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)) {
                 askUserForOpeningAppSettings()
             } else {
-                Toast.makeText(this, "В разрешении отказано", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "В разрешении отказано", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -57,12 +62,12 @@ class RequestFragment : Fragment() {
     private fun askUserForOpeningAppSettings() {
         val appSettingsIntent = Intent(
             Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
-            Uri.fromParts("package", packageName, null)
+            Uri.fromParts("package", activity?.getPackageName(), null)
         )
-        if (packageManager.resolveActivity(appSettingsIntent, PackageManager.MATCH_DEFAULT_ONLY) == null) {
-            Toast.makeText(this, "В разрешении отказано навсегда", Toast.LENGTH_SHORT).show()
+        if (activity?.getPackageManager()?.resolveActivity(appSettingsIntent, PackageManager.MATCH_DEFAULT_ONLY) == null) {
+            Toast.makeText(activity, "В разрешении отказано навсегда", Toast.LENGTH_SHORT).show()
         } else {
-            AlertDialog.Builder(this)
+            AlertDialog.Builder(requireContext())
                 .setTitle("В разрешении отказано")
                 .setMessage("В разрешении отказано навсегда." +
                         "Вы можете изменить это в настройках телефона.\n\n" +
@@ -76,7 +81,7 @@ class RequestFragment : Fragment() {
     }
 
     private fun onGeoPermissionGranted() {
-        Toast.makeText(this, "Геолокация включена", Toast.LENGTH_SHORT).show()
+        Toast.makeText(activity, "Геолокация включена", Toast.LENGTH_SHORT).show()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
