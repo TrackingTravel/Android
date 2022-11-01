@@ -2,6 +2,7 @@ package com.maximvs.trackingtravel
 
 import android.Manifest
 import android.content.Context
+import android.content.Context.LOCATION_SERVICE
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -65,7 +66,7 @@ class RequestFragment : Fragment() {
         if (activity?.getPackageManager()?.resolveActivity(appSettingsIntent, PackageManager.MATCH_DEFAULT_ONLY) == null) {
             Toast.makeText(activity, "В разрешении отказано навсегда", Toast.LENGTH_SHORT).show()
         } else {
-            AlertDialog.Builder(Context)
+            AlertDialog.Builder(requireContext())
                 .setTitle("В разрешении отказано")
                 .setMessage("В разрешении отказано навсегда." +
                         "Вы можете изменить это в настройках телефона.\n\n" +
