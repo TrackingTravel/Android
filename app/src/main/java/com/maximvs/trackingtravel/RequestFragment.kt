@@ -1,6 +1,7 @@
 package com.maximvs.trackingtravel
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -14,7 +15,6 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
-import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.maximvs.trackingtravel.databinding.FragmentRequestBinding
 
@@ -56,14 +56,16 @@ class RequestFragment : Fragment() {
     }
 
     private fun askUserForOpeningAppSettings() {
+
+
         val appSettingsIntent = Intent(
             Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
-            Uri.fromParts("package", PackageName, null)
+            Uri.fromParts("package", activity?.getPackageName(), null)
         )
-        if (packageManager.resolveActivity(appSettingsIntent, PackageManager.MATCH_DEFAULT_ONLY) == null) {
+        if (activity?.getPackageManager()?.resolveActivity(appSettingsIntent, PackageManager.MATCH_DEFAULT_ONLY) == null) {
             Toast.makeText(activity, "В разрешении отказано навсегда", Toast.LENGTH_SHORT).show()
         } else {
-            AlertDialog.Builder(activity)
+            AlertDialog.Builder(Context)
                 .setTitle("В разрешении отказано")
                 .setMessage("В разрешении отказано навсегда." +
                         "Вы можете изменить это в настройках телефона.\n\n" +
