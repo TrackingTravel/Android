@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.maximvs.trackingtravel.databinding.FragmentRequestBinding
 import com.maximvs.trackingtravel.databinding.FragmentRouteBinding
 
 class RouteFragment : Fragment() {
@@ -16,6 +15,4 @@ class RouteFragment : Fragment() {
 
         return binding.root
     }
-
-
 }

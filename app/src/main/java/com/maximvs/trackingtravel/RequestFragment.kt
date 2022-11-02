@@ -4,7 +4,6 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import androidx.fragment.app.Fragment
@@ -13,23 +12,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import com.maximvs.trackingtravel.databinding.FragmentRequestBinding
-import java.sql.Wrapper
 
 
 class RequestFragment : Fragment() {
     private lateinit var binding: FragmentRequestBinding
 
-    //@RequiresApi(Build.VERSION_CODES.M)
-
     private val requestGeoPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission(),
         ::onGotGeoPermissionResult
     )
-
-    //@RequiresApi(Build.VERSION_CODES.M)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentRequestBinding.inflate(inflater, container, false)
@@ -44,8 +37,6 @@ class RequestFragment : Fragment() {
 
         return binding.root
     }
-
-   // @RequiresApi(Build.VERSION_CODES.M)
 
     private fun onGotGeoPermissionResult(granted: Boolean) {
         if (granted) {
