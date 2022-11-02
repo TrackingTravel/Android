@@ -4,40 +4,39 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
-import com.maximvs.trackingtravel.databinding.ActivityRequestBinding
+import com.maximvs.trackingtravel.databinding.FragmentRequestBinding
 
-class ActivityRequest : AppCompatActivity() {
 
-    @RequiresApi(Build.VERSION_CODES.M)
+class RequestFragment : Fragment() {
+    private lateinit var binding: FragmentRequestBinding
 
     private val requestGeoPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission(),
         ::onGotGeoPermissionResult
     )
 
-    @RequiresApi(Build.VERSION_CODES.M)
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        val binding = ActivityRequestBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = FragmentRequestBinding.inflate(inflater, container, false)
 
         binding.requestGeoPermissionButton.setOnClickListener {
             requestGeoPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
         }
-    }
 
-    @RequiresApi(Build.VERSION_CODES.M)
+        binding.startButton.setOnClickListener {
+            (activity as MainActivity).startRouteFragment()
+        }
+
+        return binding.root
+    }
 
     private fun onGotGeoPermissionResult(granted: Boolean) {
         if (granted) {
@@ -46,7 +45,7 @@ class ActivityRequest : AppCompatActivity() {
             if (!shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)) {
                 askUserForOpeningAppSettings()
             } else {
-                Toast.makeText(this, "В разрешении отказано", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "В разрешении отказано", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -54,12 +53,12 @@ class ActivityRequest : AppCompatActivity() {
     private fun askUserForOpeningAppSettings() {
         val appSettingsIntent = Intent(
             Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
-            Uri.fromParts("package", packageName, null)
+            Uri.fromParts("package", activity?.getPackageName(), null)
         )
-        if (packageManager.resolveActivity(appSettingsIntent, PackageManager.MATCH_DEFAULT_ONLY) == null) {
-            Toast.makeText(this, "В разрешении отказано навсегда", Toast.LENGTH_SHORT).show()
+        if (activity?.getPackageManager()?.resolveActivity(appSettingsIntent, PackageManager.MATCH_DEFAULT_ONLY) == null) {
+            Toast.makeText(activity, "В разрешении отказано навсегда", Toast.LENGTH_SHORT).show()
         } else {
-            AlertDialog.Builder(this)
+            AlertDialog.Builder(requireContext())
                 .setTitle("В разрешении отказано")
                 .setMessage("В разрешении отказано навсегда." +
                         "Вы можете изменить это в настройках телефона.\n\n" +
@@ -73,6 +72,10 @@ class ActivityRequest : AppCompatActivity() {
     }
 
     private fun onGeoPermissionGranted() {
-        Toast.makeText(this, "Геолокация включена", Toast.LENGTH_SHORT).show()
+        Toast.makeText(activity, "Геолокация включена", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 }

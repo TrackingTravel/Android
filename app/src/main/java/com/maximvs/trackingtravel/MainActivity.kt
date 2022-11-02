@@ -1,10 +1,9 @@
 package com.maximvs.trackingtravel
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import com.maximvs.trackingtravel.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,9 +11,26 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnBtn.setOnClickListener(View.OnClickListener {
-            val intent = Intent(this@MainActivity, ActivityRequest::class.java)
-            startActivity(intent)
-        })
+            supportFragmentManager
+                .beginTransaction()
+                .add(R.id.fragment_container, StartFragment())
+                .addToBackStack(null)
+                .commit()
+    }
+
+    fun startRequestFragment (){
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, RequestFragment())
+            .addToBackStack(null)
+            .commit()
+    }
+
+    fun startRouteFragment() {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, RouteFragment())
+            .addToBackStack(null)
+            .commit()
     }
 }
