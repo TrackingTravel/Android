@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Image_Start">
+        <item name="android:layout_width">330dp</item>
+        <item name="android:layout_height">426dp</item>
+    </style>
+
+    <style name="Button_Start">
+        <item name="android:layout_width">328dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="cornerRadius">56dp</item>
+        <item name="backgroundTint">#ED6B48</item>
+    </style>
+
+    <style name="Button_Allow">
+        <item name="android:layout_width">164dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="cornerRadius">56dp</item>
+        <item name="backgroundTint">#ED6B48</item>
+    </style>
+
+    <style name="Button_Ignore">
+        <item name="android:layout_width">164dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:textColor">#ED6B48</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="cornerRadius">56dp</item>
+        <item name="backgroundTint">#FFFFFFFF</item>
+    </style>
+</resources>

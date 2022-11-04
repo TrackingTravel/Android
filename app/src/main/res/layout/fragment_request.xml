@@ -6,48 +6,86 @@
     android:layout_height="match_parent"
     tools:context=".RequestFragment">
 
-    <TextView
-        android:id="@+id/requestCameraPermissionTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Обоснование запроса на геопозиционирование"
-        android:gravity="center"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_container"
+        android:layout_marginTop="15dp"
+        android:layout_width="330dp"
+        android:layout_height="426dp"
+        android:elevation="2dp"
+        app:cardCornerRadius="160dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/GeoImage"
+            style="@style/Image_Start"
+            android:background="@drawable/request_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvReqOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
+        android:gravity="center"
+        android:text="@string/req_text_1"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_container" />
+
+    <TextView
+        android:id="@+id/twReqTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/req_text_2"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReqOne" />
+
+    <Button
+        android:id="@+id/btnIgnore"
+        style="@style/Button_Ignore"
+        android:textAllCaps="false"
+        android:text="@string/ignore"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnAllow"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/requestGeoPermissionButton"/>
+        app:layout_constraintVertical_bias="0.95" />
 
     <Button
-        android:id="@+id/requestGeoPermissionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Разрешить геопозиционирование"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/btnAllow"
+        style="@style/Button_Allow"
+        android:textAllCaps="false"
+        android:text="@string/allow"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/requestCameraPermissionTextView"
-        app:layout_constraintBottom_toTopOf="@id/requestAudioAndLocationPermissionTextView"/>
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/btnIgnore"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
 
-    <TextView
-        android:id="@+id/requestAudioAndLocationPermissionTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Можно и без геолокации, нажмите кнопочку К МАРШРУТАМ"
-        android:gravity="center"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/requestGeoPermissionButton"
-        app:layout_constraintBottom_toTopOf="@id/startButton"/>
-
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="К маршрутам"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/requestAudioAndLocationPermissionTextView"
-        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
