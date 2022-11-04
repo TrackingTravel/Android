@@ -67,7 +67,7 @@ class RequestFragment : Fragment() {
         } else {
             AlertDialog.Builder(requireContext())
                 .setTitle("В разрешении отказано")
-                .setMessage("В разрешении отказано навсегда." +
+                .setMessage("В разрешении отказано." +
                         "Вы можете изменить это в настройках телефона.\n\n" +
                         "Хотите перейти в настройки?")
                 .setPositiveButton("Перейти") { _, _ ->
