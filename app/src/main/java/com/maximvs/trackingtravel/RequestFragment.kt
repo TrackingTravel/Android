@@ -27,11 +27,15 @@ class RequestFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentRequestBinding.inflate(inflater, container, false)
 
-        binding.requestGeoPermissionButton.setOnClickListener {
+        binding.btnAllow.setOnClickListener {
             requestGeoPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
         }
 
-        binding.startButton.setOnClickListener {
+        binding.btnAllow.setOnClickListener {
+            (activity as MainActivity).startRouteFragment()
+        }
+
+        binding.btnIgnore.setOnClickListener {
             (activity as MainActivity).startRouteFragment()
         }
 
