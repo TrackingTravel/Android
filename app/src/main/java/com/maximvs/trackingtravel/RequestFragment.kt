@@ -33,10 +33,13 @@ class RequestFragment : Fragment() {
 
         binding.btnAllow.setOnClickListener {
             (activity as MainActivity).startRouteFragment()
+            onGeoPermissionGranted()
         }
 
         binding.btnIgnore.setOnClickListener {
             (activity as MainActivity).startRouteFragment()
+            onGotGeoPermissionResult(granted = false)
+
         }
 
         return binding.root
