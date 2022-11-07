@@ -32,4 +32,5 @@
         <item name="cornerRadius">56dp</item>
         <item name="backgroundTint">#FFFFFFFF</item>
     </style>
+
 </resources>

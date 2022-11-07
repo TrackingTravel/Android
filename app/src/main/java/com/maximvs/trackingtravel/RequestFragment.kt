@@ -31,15 +31,14 @@ class RequestFragment : Fragment() {
             requestGeoPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
         }
 
-        binding.btnAllow.setOnClickListener {
+        /*binding.btnAllow.setOnClickListener {
             (activity as MainActivity).startRouteFragment()
             onGeoPermissionGranted()
-        }
+        }*/
 
         binding.btnIgnore.setOnClickListener {
             (activity as MainActivity).startRouteFragment()
-            onGotGeoPermissionResult(granted = false)
-
+            //onGotGeoPermissionResult(granted = false)
         }
 
         return binding.root
@@ -67,7 +66,7 @@ class RequestFragment : Fragment() {
         } else {
             AlertDialog.Builder(requireContext())
                 .setTitle("В разрешении отказано")
-                .setMessage("В разрешении отказано." +
+                .setMessage("В разрешении отказано навсегда." +
                         "Вы можете изменить это в настройках телефона.\n\n" +
                         "Хотите перейти в настройки?")
                 .setPositiveButton("Перейти") { _, _ ->
@@ -79,6 +78,7 @@ class RequestFragment : Fragment() {
     }
 
     private fun onGeoPermissionGranted() {
+        (activity as MainActivity).startRouteFragment()
         Toast.makeText(activity, "Геолокация включена", Toast.LENGTH_SHORT).show()
     }
 
