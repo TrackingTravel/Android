@@ -61,7 +61,7 @@ class RequestFragment : Fragment() {
             Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
             Uri.fromParts("package", activity?.getPackageName(), null)
         )
-        if (activity?.getPackageManager()?.resolveActivity(appSettingsIntent, PackageManager.MATCH_DEFAULT_ONLY) == null) {
+        if (activity?.packageManager?.resolveActivity(appSettingsIntent, PackageManager.MATCH_DEFAULT_ONLY) == null) {
             Toast.makeText(activity, "В разрешении отказано навсегда", Toast.LENGTH_SHORT).show()
         } else {
             AlertDialog.Builder(requireContext())
