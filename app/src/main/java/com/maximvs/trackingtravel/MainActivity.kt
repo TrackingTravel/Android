@@ -1,7 +1,7 @@
 package com.maximvs.trackingtravel
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.maximvs.trackingtravel.databinding.ActivityMainBinding
 
 
@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
 
             supportFragmentManager
                 .beginTransaction()
+                //.setCustomAnimations(R.anim.to_left_in, R.anim.to_left_out, R.anim.to_right_in, R.anim.to_right_out)
                 .add(R.id.fragment_container, StartFragment())
                 .addToBackStack(null)
                 .commit()
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     fun startRequestFragment (){
         supportFragmentManager
             .beginTransaction()
+            .setCustomAnimations(R.anim.to_left_in, R.anim.to_left_out, R.anim.to_right_in, R.anim.to_right_out)
             .replace(R.id.fragment_container, RequestFragment())
             .addToBackStack(null)
             .commit()
@@ -29,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     fun startRouteFragment() {
         supportFragmentManager
             .beginTransaction()
+            .setCustomAnimations(R.anim.to_left_in, R.anim.to_left_out, R.anim.to_right_in, R.anim.to_right_out)
             .replace(R.id.fragment_container, RouteFragment())
             .addToBackStack(null)
             .commit()
