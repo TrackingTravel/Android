@@ -1,4 +1,4 @@
-package com.maximvs.trackingtravel
+package com.maximvs.trackingtravel.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.maximvs.trackingtravel.databinding.FragmentStartBinding
+import com.maximvs.trackingtravel.utills.AnimationHelper
+import com.maximvs.trackingtravel.view.MainActivity
 
 class StartFragment : Fragment () {
 
@@ -23,6 +25,8 @@ class StartFragment : Fragment () {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        AnimationHelper.performFragmentCircularRevealAnimation(binding.start, requireActivity(), 1)
+
 
     }
 }
