@@ -1,4 +1,4 @@
-package com.maximvs.trackingtravel.view.fragments
+package com.maximvs.trackingtravel
 
 import android.Manifest
 import android.content.Intent
@@ -15,8 +15,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import com.maximvs.trackingtravel.databinding.FragmentRequestBinding
 import androidx.activity.result.ActivityResultLauncher
-import com.maximvs.trackingtravel.utills.AnimationHelper
-import com.maximvs.trackingtravel.view.MainActivity
 
 class RequestFragment : Fragment() {
     private lateinit var binding: FragmentRequestBinding
@@ -30,7 +28,7 @@ class RequestFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         binding = FragmentRequestBinding.inflate(inflater, container, false)
 
         binding.btnAllow.setOnClickListener {
@@ -40,6 +38,7 @@ class RequestFragment : Fragment() {
                     Manifest.permission.ACCESS_COARSE_LOCATION
                 )
             )
+
         }
 
         binding.btnIgnore.setOnClickListener {
@@ -50,7 +49,7 @@ class RequestFragment : Fragment() {
     }
 
     private fun onGotGeoPermissionResult(grantResults: Map<String, Boolean>) {
-        if (grantResults.entries.all { it.value }) {
+        if (grantResults.entries.all { it.value == true }) {
             onGeoPermissionGranted()
         } else {
             if (!shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION) &&
@@ -66,9 +65,9 @@ class RequestFragment : Fragment() {
     private fun askUserForOpeningAppSettings() {
         val appSettingsIntent = Intent(
             Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
-            Uri.fromParts("package", activity?.packageName, null)
+            Uri.fromParts("package", activity?.getPackageName(), null)
         )
-        if (activity?.packageManager
+        if (activity?.getPackageManager()
                 ?.resolveActivity(appSettingsIntent, PackageManager.MATCH_DEFAULT_ONLY) == null
         ) {
             Toast.makeText(activity, "В разрешении отказано навсегда", Toast.LENGTH_SHORT).show()
@@ -95,12 +94,11 @@ class RequestFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        AnimationHelper.performFragmentCircularRevealAnimation(binding.request, requireActivity(), 2)
-
     }
 }
 
 private fun <I> ActivityResultLauncher<I>.launch(accessFineLocation: I, accessCoarseLocation: I) {
 
 }
+
+
