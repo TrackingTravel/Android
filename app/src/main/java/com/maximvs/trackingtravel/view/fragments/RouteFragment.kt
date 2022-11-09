@@ -1,4 +1,4 @@
-package com.maximvs.trackingtravel
+package com.maximvs.trackingtravel.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

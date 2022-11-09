@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartFragment">
+    android:id="@+id/start_fragment_root"
+    tools:context=".view.fragments.StartFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/item_container"
@@ -35,6 +36,7 @@
         android:layout_marginEnd="50dp"
         android:text="@string/start_text_1"
         android:textSize="24sp"
+        android:lineHeight="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,13 +47,16 @@
         style="@style/text_view_style"
         android:text="@string/start_text_2"
         android:textSize="16sp"
+        android:lineHeight="24sp"
         android:layout_marginTop="20dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvStartOne" />
+        app:layout_constraintTop_toBottomOf="@+id/tvStartOne"
+        app:layout_constraintBottom_toTopOf="@id/btnBtn"
+        />
 
     <Button
         android:id="@+id/btnBtn"

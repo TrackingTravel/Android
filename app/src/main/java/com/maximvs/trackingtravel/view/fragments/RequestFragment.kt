@@ -1,4 +1,4 @@
-package com.maximvs.trackingtravel
+package com.maximvs.trackingtravel.view.fragments
 
 import android.Manifest
 import android.content.Intent
@@ -6,15 +6,16 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.Fragment
 import com.maximvs.trackingtravel.databinding.FragmentRequestBinding
-import androidx.activity.result.ActivityResultLauncher
+import com.maximvs.trackingtravel.view.MainActivity
 
 class RequestFragment : Fragment() {
     private lateinit var binding: FragmentRequestBinding
@@ -24,14 +25,20 @@ class RequestFragment : Fragment() {
         ::onGotGeoPermissionResult
     )
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        retainInstance = true
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentRequestBinding.inflate(inflater, container, false)
 
         binding.btnAllow.setOnClickListener {
+
             requestGeoPermissionLauncher.launch(
                 arrayOf(
                     Manifest.permission.ACCESS_FINE_LOCATION,
@@ -44,12 +51,11 @@ class RequestFragment : Fragment() {
         binding.btnIgnore.setOnClickListener {
             (activity as MainActivity).startRouteFragment()
         }
-
         return binding.root
     }
 
     private fun onGotGeoPermissionResult(grantResults: Map<String, Boolean>) {
-        if (grantResults.entries.all { it.value == true }) {
+        if (grantResults.entries.all { it.value }) {
             onGeoPermissionGranted()
         } else {
             if (!shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION) &&
@@ -64,10 +70,11 @@ class RequestFragment : Fragment() {
 
     private fun askUserForOpeningAppSettings() {
         val appSettingsIntent = Intent(
+
             Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
-            Uri.fromParts("package", activity?.getPackageName(), null)
+            Uri.fromParts("package", activity?.packageName, null)
         )
-        if (activity?.getPackageManager()
+        if (activity?.packageManager
                 ?.resolveActivity(appSettingsIntent, PackageManager.MATCH_DEFAULT_ONLY) == null
         ) {
             Toast.makeText(activity, "В разрешении отказано навсегда", Toast.LENGTH_SHORT).show()
@@ -92,13 +99,12 @@ class RequestFragment : Fragment() {
         Toast.makeText(activity, "Геолокация включена", Toast.LENGTH_SHORT).show()
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    private fun <I> ActivityResultLauncher<I>.launch(
+        accessFineLocation: I,
+        accessCoarseLocation: I
+    ) {
+
     }
-}
-
-private fun <I> ActivityResultLauncher<I>.launch(accessFineLocation: I, accessCoarseLocation: I) {
-
 }
 
 
