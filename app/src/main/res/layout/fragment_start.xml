@@ -18,8 +18,7 @@
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tvStartOne">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/startImage"
@@ -33,10 +32,12 @@
 
     <TextView
         android:id="@+id/tvStartOne"
-        style="@style/text_view_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
+        android:gravity="center"
         android:text="@string/start_text_1"
         android:textSize="24sp"
         android:lineHeight="32sp"
@@ -47,7 +48,8 @@
 
     <TextView
         android:id="@+id/twStartTwo"
-        style="@style/text_view_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/start_text_2"
         android:textSize="16sp"
         android:lineHeight="24sp"

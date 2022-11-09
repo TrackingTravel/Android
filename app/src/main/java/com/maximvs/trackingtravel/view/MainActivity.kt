@@ -3,8 +3,8 @@ package com.maximvs.trackingtravel.view
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.maximvs.trackingtravel.R
+import com.maximvs.trackingtravel.RequestFragment
 import com.maximvs.trackingtravel.databinding.ActivityMainBinding
-import com.maximvs.trackingtravel.view.fragments.RequestFragment
 import com.maximvs.trackingtravel.view.fragments.RouteFragment
 import com.maximvs.trackingtravel.view.fragments.StartFragment
 
