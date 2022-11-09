@@ -4,23 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RequestFragment">
+    android:id="@+id/start_fragment_root"
+    tools:context=".view.fragments.StartFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/item_container"
-        android:layout_marginTop="15dp"
-        android:layout_width="330dp"
-        android:layout_height="426dp"
-        android:elevation="2dp"
-        app:cardCornerRadius="160dp"
+        style="@style/card_style"
+        android:elevation="-0.5dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/GeoImage"
+            android:id="@+id/startImage"
             style="@style/Image_Start"
-            android:background="@drawable/request_photo"
+            android:background="@drawable/start_photo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -28,64 +29,48 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/tvReqOne"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/tvStartOne"
+        style="@style/text_view_style"
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
-        android:gravity="center"
-        android:text="@string/req_text_1"
-        android:textSize="25sp"
-        android:textStyle="bold"
+        android:text="@string/start_text_1"
+        android:textSize="24sp"
+        android:lineHeight="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/item_container" />
 
     <TextView
-        android:id="@+id/twReqTwo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/req_text_2"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:gravity="center"
+        android:id="@+id/twStartTwo"
+        style="@style/text_view_style"
+        android:text="@string/start_text_2"
+        android:textSize="16sp"
+        android:lineHeight="24sp"
         android:layout_marginTop="20dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvReqOne" />
+        app:layout_constraintTop_toBottomOf="@+id/tvStartOne"
+        app:layout_constraintBottom_toTopOf="@+id/btnBtn" />
+
 
     <Button
-        android:id="@+id/btnIgnore"
-        style="@style/Button_Ignore"
+        android:id="@+id/btnBtn"
+        style="@style/Button_Start"
         android:textAllCaps="false"
-        android:text="@string/ignore"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:text="@string/start"
+        android:stateListAnimator="@null"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btnAllow"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.95" />
-
-    <Button
-        android:id="@+id/btnAllow"
-        style="@style/Button_Allow"
-        android:textAllCaps="false"
-        android:text="@string/allow"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@id/btnIgnore"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
