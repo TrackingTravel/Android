@@ -3,14 +3,14 @@
 
     <style name="card_style">
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">426dp</item>
+        <item name="android:layout_height">0dp</item>
         <item name="cardCornerRadius">180dp</item>
 
     </style>
 
     <style name="Image_Start">
-        <item name="android:layout_width">380dp</item>
-        <item name="android:layout_height">430dp</item>
+        <item name="android:layout_width">400dp</item>
+        <item name="android:layout_height">550dp</item>
     </style>
 
     <style name="text_view_style">
