@@ -1,4 +1,4 @@
-package com.maximvs.trackingtravel
+package com.maximvs.trackingtravel.view.fragments
 
 import android.Manifest
 import android.content.Intent
@@ -21,7 +21,7 @@ class RequestFragment : Fragment() {
     private lateinit var binding: FragmentRequestBinding
 
     private val requestGeoPermissionLauncher = registerForActivityResult(
-        ActivityResultContracts.RequestPermission(),
+        ActivityResultContracts.RequestMultiplePermissions(),
         ::onGotGeoPermissionResult
     )
 
@@ -29,27 +29,24 @@ class RequestFragment : Fragment() {
         binding = FragmentRequestBinding.inflate(inflater, container, false)
 
         binding.btnAllow.setOnClickListener {
-            requestGeoPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
+            requestGeoPermissionLauncher.launch(
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION))
         }
-
-        /*binding.btnAllow.setOnClickListener {
-            (activity as MainActivity).startRouteFragment()
-            onGeoPermissionGranted()
-        }*/
 
         binding.btnIgnore.setOnClickListener {
             (activity as MainActivity).startRouteFragment()
-            //onGotGeoPermissionResult(granted = false)
         }
 
         return binding.root
     }
 
-    private fun onGotGeoPermissionResult(granted: Boolean) {
-        if (granted) {
+    private fun onGotGeoPermissionResult(grantResults: Map<String, Boolean>) {
+        if (grantResults.entries.all{it.value == true}) {
             onGeoPermissionGranted()
         } else {
-            if (!shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)) {
+            if (!shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION) &&
+                !shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_COARSE_LOCATION)) {
                 askUserForOpeningAppSettings()
             } else {
                 Toast.makeText(activity, "В разрешении отказано", Toast.LENGTH_SHORT).show()
