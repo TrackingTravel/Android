@@ -9,6 +9,19 @@
     <string name="start_text_2">Tracking Travel позволяет легко найти маршруты по Черногории</string>
     <string name="allow">Разрешить</string>
     <string name="ignore">Пропустить</string>
+    <string name="alert_dialog_title">В разрешении отказано</string>
+    <string name="alert_dialog_message">В разрешении отказано навсегда.
+    Вы можете изменить это в настройках телефона.
+    Хотите перейти в настройки?</string>
+    <string name="alert_dialog_positive_button">Перейти</string>
+    <string name="GPS_denied_forever">В разрешении отказано навсегда</string>
+    <string name="GPS_on">Геолокация включена</string>
+    <string name="GPS_denied">В разрешении отказано</string>
+
+
+
+
+
 
 
 
