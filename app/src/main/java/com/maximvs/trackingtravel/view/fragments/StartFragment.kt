@@ -12,12 +12,7 @@ class StartFragment : Fragment () {
 
     private lateinit var binding: FragmentStartBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        retainInstance = true
-    }
-
-        override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentStartBinding.inflate(inflater, container, false)
 
         binding.btnBtn.setOnClickListener {
@@ -27,4 +22,8 @@ class StartFragment : Fragment () {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+    }
 }
