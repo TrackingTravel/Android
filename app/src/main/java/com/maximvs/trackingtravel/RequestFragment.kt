@@ -85,8 +85,6 @@ class RequestFragment : Fragment() {
     }
 }
 
-private fun <I> ActivityResultLauncher<I>.launch(accessFineLocation: I, accessCoarseLocation: I) {
 
-}
 
 
