@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
+    android:id="@+id/request"
     tools:context=".view.fragments.RequestFragment">
 
     <androidx.cardview.widget.CardView
