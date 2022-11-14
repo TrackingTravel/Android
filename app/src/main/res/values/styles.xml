@@ -32,7 +32,7 @@
     </style>
 
     <style name="Button_Allow">
-        <item name="android:layout_width">164dp</item>
+        <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">56dp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">16sp</item>
@@ -42,7 +42,18 @@
     </style>
 
     <style name="Button_Ignore">
-        <item name="android:layout_width">164dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="cornerRadius">56dp</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="Button_OpenMap">
+        <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">56dp</item>
         <item name="android:textColor">@color/orange</item>
         <item name="android:textStyle">bold</item>
