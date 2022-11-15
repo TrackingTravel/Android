@@ -30,11 +30,8 @@ class DetailsFragment : Fragment() {
     private fun setTracksDetails() {
         track = arguments?.get("track") as Track
 
-        //Устанавливаем заголовок
         details_toolbar.title = track.title
-        //Устанавливаем картинку
         details_photo.setImageResource(track.photo)
-        //Устанавливаем описание
         details_description.text = track.description
 
 
