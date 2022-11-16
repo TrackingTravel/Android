@@ -17,7 +17,11 @@
     <string name="GPS_denied_forever">В разрешении отказано навсегда</string>
     <string name="GPS_on">Геолокация включена</string>
     <string name="GPS_denied">В разрешении отказано</string>
-
+    <string name="headline">Title</string>
+    <string name="open_map">Открыть карту</string>
+    <string name="back_to">Национальный парк Дурмитор</string>
+    <string name="tracks">Маршруты</string>
+    <string name="settings">Настройка</string>
 
 
 
