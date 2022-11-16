@@ -9,4 +9,8 @@
     <string name="req_text_2">Ваше местоположение будет использоваться для отображения Вашей позиции на карте</string>
     <string name="allow">Разрешить</string>
     <string name="ignore">Пропустить</string>
+    <string name="route">Маршруты</string>
+    <string name="setting">Настройки</string>
+    <string name="route_name">Название маршрута</string>
+    <string name="open_map">Открыть карту</string>
 </resources>

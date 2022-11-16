@@ -33,4 +33,12 @@ class MainActivity : AppCompatActivity() {
             .addToBackStack(null)
             .commit()
     }
+
+    fun startDetailsFragment() {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, DetailsFragment())
+            .addToBackStack(null)
+            .commit()
+    }
 }
