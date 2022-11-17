@@ -1,6 +1,6 @@
-package com.maximvs.trackingtravel.view
+package com.maximvs.trackingtravel
 
-import android.os.Parcelable
+/*import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
@@ -10,3 +10,6 @@ data class Track(
     val photo: Int,
     val description: String,
 ) : Parcelable
+
+
+ */
