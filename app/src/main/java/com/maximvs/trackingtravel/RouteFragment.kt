@@ -16,4 +16,3 @@ class RouteFragment : Fragment() {
 
         return binding.root
     }
-}

@@ -69,3 +69,4 @@
         app:menu="@menu/menu_route_fragment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
