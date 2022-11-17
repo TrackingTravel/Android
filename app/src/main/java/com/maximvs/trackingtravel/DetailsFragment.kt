@@ -1,18 +1,21 @@
-package com.maximvs.trackingtravel.view.fragments
+package com.maximvs.trackingtravel
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.maximvs.trackingtravel.databinding.FragmentRouteBinding
+import com.maximvs.trackingtravel.databinding.FragmentDetailsBinding
 
-class RouteFragment : Fragment() {
-    private lateinit var binding: FragmentRouteBinding
+
+class DetailsFragment : Fragment() {
+    private lateinit var binding: FragmentDetailsBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentRouteBinding.inflate(inflater, container, false)
+        binding = FragmentDetailsBinding.inflate(inflater, container, false)
 
         return binding.root
     }
 }
+
+
