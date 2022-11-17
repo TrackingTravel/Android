@@ -11,8 +11,13 @@ import com.maximvs.trackingtravel.databinding.FragmentRouteBinding
 class RouteFragment : Fragment() {
     private lateinit var binding: FragmentRouteBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         binding = FragmentRouteBinding.inflate(inflater, container, false)
 
         return binding.root
     }
+}
