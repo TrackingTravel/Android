@@ -10,160 +10,106 @@
     android:elevation="2dp"
     app:cardCornerRadius="15dp">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ImageView
-        android:id="@+id/view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/random_photo" />
-
-    <TextView
-        android:id="@+id/tv_rv_item_title"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="40dp"
-        android:text="Здесь будет какое-то название"
-        android:textSize="22sp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/iv_rv_item_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginBottom="17dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
-        app:srcCompat="@drawable/ic_baseline_access_time_24" />
-
-    <TextView
-        android:id="@+id/tv_rv_item_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginBottom="17dp"
-        android:text="Время"
-        android:textColor="@color/white"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintStart_toEndOf="@+id/iv_rv_item_1"
-        app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title" />
-
-    <ImageView
-        android:id="@+id/iv_rv_item_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
-        android:layout_marginStart="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintStart_toEndOf="@+id/tv_rv_item_1"
-        app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
-        app:srcCompat="@drawable/ic_outline_near_me_24" />
-
-    <TextView
-        android:id="@+id/tv_rv_item_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginBottom="17dp"
-        android:text="Расстояние"
-        android:textColor="@color/white"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintStart_toEndOf="@+id/iv_rv_item_2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title" />
-
-    <ImageView
-        android:id="@+id/iv_rv_item_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="18dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintStart_toEndOf="@+id/tv_rv_item_2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
-        app:srcCompat="@drawable/ic_round_terrain_24" />
-
-    <TextView
-        android:id="@+id/tv_rv_item_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginBottom="17dp"
-        android:text="Высота"
-        android:textColor="@color/white"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintStart_toEndOf="@+id/iv_rv_item_3"
-        app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
-=======
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="400dp"
-    xmlns:tools="http://schemas.android.com/tools">
-
-<androidx.cardview.widget.CardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/item_container"
+        <ImageView
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/random_photo" />
+
+        <TextView
+            android:id="@+id/tv_rv_item_title"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="56dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="40dp"
+            android:text="Здесь будет какое-то название"
+            android:textSize="22sp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <ImageView
-                android:id="@+id/photo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/photo"
-                app:layout_constraintBootom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/iv_rv_item_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginBottom="17dp"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
+            app:srcCompat="@drawable/ic_baseline_access_time_24" />
 
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="24dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/photo"
-                tools:text="Title"/>
+        <TextView
+            android:id="@+id/tv_rv_item_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginBottom="17dp"
+            android:text="Время"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintStart_toEndOf="@+id/iv_rv_item_1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title" />
 
-            <TextView
-                android:id="@+id/description"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:padding="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title"
-                tools:text="@tools:sample/lorem/random" />
+        <ImageView
+            android:id="@+id/iv_rv_item_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintStart_toEndOf="@+id/tv_rv_item_1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
+            app:srcCompat="@drawable/ic_outline_near_me_24" />
 
+        <TextView
+            android:id="@+id/tv_rv_item_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginBottom="17dp"
+            android:text="Расстояние"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintStart_toEndOf="@+id/iv_rv_item_2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+        <ImageView
+            android:id="@+id/iv_rv_item_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="18dp"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintStart_toEndOf="@+id/tv_rv_item_2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
+            app:srcCompat="@drawable/ic_round_terrain_24" />
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/tv_rv_item_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginBottom="17dp"
+            android:text="Высота"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintStart_toEndOf="@+id/iv_rv_item_3"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
