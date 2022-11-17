@@ -21,6 +21,20 @@
         Бобия высотой 1436 м (3 часа, перепад высот — 686 м), гора Маглич высотой 1560 м (4 часа,
         перепад высот — 695 м), гора Трескавац высотой 2024 м (4 часа, перепад высот — 670 м),
         гора Сурдуп высотой 2184 м (5 часов, перепад высот — 900 м).</string>
+    <string name="toast_denied">В разрешении отказано</string>
+    <string name="toast_denied_forever">В разрешении отказано навсегда</string>
+    <string name="alert_dialog_title">В разрешении отказано</string>
+    <string name="alert_dialog_message">В разрешении отказано навсегда.
+    Вы можете изменить это в настройках телефона.
+    Хотите перейти в настройки?</string>
+    <string name="alert_dialog_set_positive">Перейти</string>
+    <string name="toast_GPS_on">Геолокация включена</string>
+
+
+
+
+
+
 
 </resources>
 

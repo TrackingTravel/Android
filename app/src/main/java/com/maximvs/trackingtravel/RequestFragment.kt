@@ -43,14 +43,14 @@ class RequestFragment : Fragment() {
     }
 
     private fun onGotGeoPermissionResult(grantResults: Map<String, Boolean>) {
-        if (grantResults.entries.all{it.value == true}) {
+        if (grantResults.entries.all{ it.value }) {
             onGeoPermissionGranted()
         } else {
             if (!shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION) &&
                 !shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_COARSE_LOCATION)) {
                 askUserForOpeningAppSettings()
             } else {
-                Toast.makeText(activity, "В разрешении отказано", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, R.string.toast_denied, Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -61,14 +61,12 @@ class RequestFragment : Fragment() {
             Uri.fromParts("package", activity?.getPackageName(), null)
         )
         if (activity?.getPackageManager()?.resolveActivity(appSettingsIntent, PackageManager.MATCH_DEFAULT_ONLY) == null) {
-            Toast.makeText(activity, "В разрешении отказано навсегда", Toast.LENGTH_SHORT).show()
+            Toast.makeText(activity, R.string.toast_denied_forever, Toast.LENGTH_SHORT).show()
         } else {
             AlertDialog.Builder(requireContext())
-                .setTitle("В разрешении отказано")
-                .setMessage("В разрешении отказано навсегда." +
-                        "Вы можете изменить это в настройках телефона.\n\n" +
-                        "Хотите перейти в настройки?")
-                .setPositiveButton("Перейти") { _, _ ->
+                .setTitle(R.string.alert_dialog_title)
+                .setMessage(R.string.alert_dialog_message)
+                .setPositiveButton(R.string.alert_dialog_set_positive) { _, _ ->
                     startActivity(appSettingsIntent)
                 }
                 .create()
@@ -78,7 +76,7 @@ class RequestFragment : Fragment() {
 
     private fun onGeoPermissionGranted() {
         (activity as MainActivity).startRouteFragment()
-        Toast.makeText(activity, "Геолокация включена", Toast.LENGTH_SHORT).show()
+        Toast.makeText(activity, R.string.toast_GPS_on, Toast.LENGTH_SHORT).show()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
