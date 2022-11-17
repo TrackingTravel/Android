@@ -13,7 +13,7 @@ class AudioListRecyclerAdapter(private val clickListener: OnItemClickListener) :
     override fun getItemCount() = items.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return TrackViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.track_item, parent, false))
+        return TrackViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.recyclerview_item, parent, false))
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
