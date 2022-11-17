@@ -25,4 +25,7 @@ class StartFragment : Fragment () {
         super.onViewCreated(view, savedInstanceState)
 
     }
+
 }
+}
+

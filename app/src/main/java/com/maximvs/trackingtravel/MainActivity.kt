@@ -11,11 +11,19 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
             supportFragmentManager
                 .beginTransaction()
                 .add(R.id.fragment_container, StartFragment())
                 .addToBackStack(null)
                 .commit()
+
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.fragment_container, StartFragment())
+            .addToBackStack(null)
+            .commit()
+
     }
 
     fun startRequestFragment (){
@@ -41,4 +49,4 @@ class MainActivity : AppCompatActivity() {
             .addToBackStack(null)
             .commit()
     }
-}
+
