@@ -24,7 +24,7 @@ class RequestFragment : Fragment() {
         ::onGotGeoPermissionResult
     )
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentRequestBinding.inflate(inflater, container, false)
 
         binding.btnAllow.setOnClickListener {
@@ -58,9 +58,9 @@ class RequestFragment : Fragment() {
     private fun askUserForOpeningAppSettings() {
         val appSettingsIntent = Intent(
             Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
-            Uri.fromParts("package", activity?.getPackageName(), null)
+            Uri.fromParts("package", activity?.packageName, null)
         )
-        if (activity?.getPackageManager()?.resolveActivity(appSettingsIntent, PackageManager.MATCH_DEFAULT_ONLY) == null) {
+        if (activity?.packageManager?.resolveActivity(appSettingsIntent, PackageManager.MATCH_DEFAULT_ONLY) == null) {
             Toast.makeText(activity, R.string.toast_denied_forever, Toast.LENGTH_SHORT).show()
         } else {
             AlertDialog.Builder(requireContext())

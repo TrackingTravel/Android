@@ -15,7 +15,7 @@ class RouteFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentRouteBinding.inflate(inflater, container, false)
 
         return binding.root
