@@ -1,8 +1,13 @@
-package com.maximvs.trackingtravel
+package com.maximvs.trackingtravel.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.maximvs.trackingtravel.R
 import com.maximvs.trackingtravel.databinding.ActivityMainBinding
+import com.maximvs.trackingtravel.view.fragments.DetailsFragment
+import com.maximvs.trackingtravel.view.fragments.RequestFragment
+import com.maximvs.trackingtravel.view.fragments.RouteFragment
+import com.maximvs.trackingtravel.view.fragments.StartFragment
 
 
 class MainActivity : AppCompatActivity() {
