@@ -7,6 +7,6 @@ import kotlinx.android.parcel.Parcelize
 data class Track(
 
     val title: String,
-    val photo: Int,
+    val photo: String,
     val description: String,
 ) : Parcelable

@@ -10,7 +10,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class Interactor(private val repo: MainRepository, private val retrofitService: TrackingTravelAPI) {
-    //В конструктор мы будм передавать коллбэк из вьюмоделе, чтобы реагировать на то, когда фильмы будут получены
+    //В конструктор мы будм передавать коллбэк из вьюмоделе, чтобы реагировать на то, когда маршруты будут получены
     //и страницу, котороую нужно загрузить (это для пагинации)
     fun getTracksFromApi(page: Int, callback: RouteFragmentViewModel.ApiCallback) {
         retrofitService.getTracks(API.KEY, "ru-RU", page).enqueue(object :
