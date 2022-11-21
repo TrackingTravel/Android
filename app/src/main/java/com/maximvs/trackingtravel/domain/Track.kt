@@ -1,4 +1,4 @@
-package com.maximvs.trackingtravel.view
+package com.maximvs.trackingtravel.domain
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
