@@ -1,16 +1,16 @@
 package com.maximvs.trackingtravel.utils
 
-import com.maximvs.trackingtravel.data.Entity.TrTrTrack
-import com.maximvs.trackingtravel.domain.Track
+import com.maximvs.trackingtravel.data.Entity.TT_Route
+import com.maximvs.trackingtravel.domain.Route
 
 object Converter {
-    fun convertApiListToDtoList(list: List<TrTrTrack>?): List<Track> {
-        val result = mutableListOf<Track>()
+    fun convertApiListToDtoList(list: List<TT_Route>?): List<Route> {
+        val result = mutableListOf<Route>()
         list?.forEach {
-            result.add(Track(
-               // title = it.title,
-               // photo = it.posterPath,
-              // description = it.overview,
+            result.add(Route(
+                title = it.title,
+                photo = it.photo,
+                description = it.description,
 
             ))
         }

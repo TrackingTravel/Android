@@ -1,10 +1,11 @@
 package com.maximvs.trackingtravel.data
 
-import com.maximvs.trackingtravel.domain.Track
+import com.maximvs.trackingtravel.data.Entity.TT_Photo
+import com.maximvs.trackingtravel.domain.Route
 
 class MainRepository {
-    val tracksDataBase = listOf(
-        Track("Название маршрута", photo = 1, "Description"),
+    val routesDataBase = listOf(
+        Route("Название маршрута", photo = id, "Description")
 
     )
 }

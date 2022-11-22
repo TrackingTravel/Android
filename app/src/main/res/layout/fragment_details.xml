@@ -55,6 +55,7 @@
             <HorizontalScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/tv_det_photo"
                 app:layout_constraintBottom_toBottomOf="@+id/btnBtn"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ll_rd">
@@ -62,7 +63,8 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="400dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:id="@+id/iv_container">
 
                     <ImageView
                         android:id="@+id/iv_rd_1"
@@ -107,7 +109,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:background="#F7F7F7">
+                android:background="#F7F7F7"
+                android:id="@+id/tv_details_more">
 
                 
 

@@ -4,30 +4,31 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.maximvs.trackingtravel.data.ApiConstants
-import com.maximvs.trackingtravel.domain.Track
+import com.maximvs.trackingtravel.domain.Route
+import kotlinx.android.synthetic.main.fragment_details.view.*
 
 class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         //Привязываем view из layout к переменным
-        private val title = itemView.title
-        private val photo = itemView.photo
-        private val description = itemView.description
+        private val title = itemView.tv_detail
+        private val photo = itemView.tv_det_photo
+        private val description = itemView.tv_details_more
 
 
         //В этом методе кладем данные из track в наши view
-        fun bind(track: Track) {
+        fun bind(route: Route) {
             //Устанавливаем заголовок
-            title.text = track.title
+            title.text = route.title
 
             //Устанавливаем постер
             //Указываем контейнер, в которм будет "жить" наша картинка
             Glide.with(itemView)
                 //Загружаем сам ресурс
-                .load(ApiConstants.IMAGES_URL  + track.photo)
+                .load(ApiConstants.BASE_URL  + route.photo)
                 //Центруем изображение
                 .centerCrop()
                 //Указываем ImageView, куда будем загружать изображение
-                .into(photo)
+                .into(iv_container)
             //Устанавливаем описание
-            description.text = track.description
+            description.tv_details_more = route.description
         }
     }

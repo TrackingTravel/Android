@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.maximvs.trackingtravel.databinding.FragmentRouteBinding
-import com.maximvs.trackingtravel.domain.Track
+import com.maximvs.trackingtravel.domain.Route
 import com.maximvs.trackingtravel.viewmodel.RouteFragmentViewModel
 
 
@@ -19,7 +19,7 @@ class RouteFragment : Fragment() {
 
 
     private lateinit var binding: FragmentRouteBinding
-    private var tracksDataBase = listOf<Track>()
+    private var tracksDataBase = listOf<Route>()
         set(value) {
             if (field == value) return
             field = value
@@ -46,7 +46,7 @@ class RouteFragment : Fragment() {
         //находим наш RV
         //initRecyckler()
         //Кладем нашу БД в RV
-        viewModel.tracksListLiveData.observe(viewLifecycleOwner, Observer<List<Track>> {
+        viewModel.tracksListLiveData.observe(viewLifecycleOwner, Observer<List<Route>> {
             tracksDataBase = it
         })
 

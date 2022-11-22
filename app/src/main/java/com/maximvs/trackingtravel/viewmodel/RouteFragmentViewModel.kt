@@ -4,17 +4,17 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.maximvs.trackingtravel.App
 import com.maximvs.trackingtravel.domain.Interactor
-import com.maximvs.trackingtravel.domain.Track
+import com.maximvs.trackingtravel.domain.Route
 
 class RouteFragmentViewModel : ViewModel() {
-    val tracksListLiveData:  MutableLiveData<List<Track>> = MutableLiveData()
+    val routesListLiveData:  MutableLiveData<List<Route>> = MutableLiveData()
     //Инициализируем интерактор
     private var interactor: Interactor = App.instance.interactor
 
     init {
-        interactor.getTracksFromApi(1, object : ApiCallback {
-            override fun onSuccess(tracks: List<Track>) {
-                tracksListLiveData.postValue(tracks)
+        interactor.getRoutesFromApi(1, object : ApiCallback {
+            override fun onSuccess(routes: List<Route>) {
+                routesListLiveData.postValue(routes)
             }
 
             override fun onFailure() {
@@ -23,7 +23,7 @@ class RouteFragmentViewModel : ViewModel() {
     }
 
     interface ApiCallback {
-        fun onSuccess(tracks: List<Track>)
+        fun onSuccess(routes: List<Route>)
         fun onFailure()
     }
 }
