@@ -5,7 +5,7 @@ import com.maximvs.trackingtravel.domain.Route
 
 class MainRepository {
     val routesDataBase = listOf(
-        Route("Название маршрута", photo = id, "Description")
+        Route("Название маршрута", List<TT_Photo>, "Description")
 
     )
 }
