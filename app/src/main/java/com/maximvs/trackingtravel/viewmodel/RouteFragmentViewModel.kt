@@ -7,12 +7,14 @@ import com.maximvs.trackingtravel.domain.Interactor
 import com.maximvs.trackingtravel.domain.Route
 
 class RouteFragmentViewModel : ViewModel() {
-    val routesListLiveData:  MutableLiveData<List<Route>> = MutableLiveData()
+
+    val routesListLiveData: MutableLiveData<List<Route>> = MutableLiveData()
+
     //Инициализируем интерактор
     private var interactor: Interactor = App.instance.interactor
 
     init {
-        interactor.getRoutesFromApi( object : ApiCallback {
+        interactor.getRoutesFromApi(object : ApiCallback {
             override fun onSuccess(routes: List<Route>) {
                 routesListLiveData.postValue(routes)
             }

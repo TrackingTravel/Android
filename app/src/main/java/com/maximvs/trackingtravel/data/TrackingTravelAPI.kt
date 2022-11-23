@@ -7,6 +7,6 @@ import retrofit2.http.GET
 interface TrackingTravelAPI {
     @GET("test-routes/getAll")
     fun getAllRoutes(
-       // @Query("page") page: Int
+        // @Query("page") page: Int
     ): Call<RoutesWrapper>
 }

@@ -10,5 +10,4 @@ data class Country(
     val id: Int,
     @SerializedName("nameOfCountry")
     val name: String
-
     ) : Parcelable

@@ -22,8 +22,6 @@ class MainActivity : AppCompatActivity() {
             .add(R.id.fragment_container, StartFragment())
             .addToBackStack(null)
             .commit()
-
-
     }
 
     fun startRequestFragment (){

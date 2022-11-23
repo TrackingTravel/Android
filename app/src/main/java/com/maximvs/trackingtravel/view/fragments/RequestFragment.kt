@@ -19,6 +19,7 @@ import com.maximvs.trackingtravel.view.MainActivity
 
 
 class RequestFragment : Fragment() {
+
     private lateinit var binding: FragmentRequestBinding
 
     private val requestGeoPermissionLauncher = registerForActivityResult(
@@ -26,14 +27,21 @@ class RequestFragment : Fragment() {
         ::onGotGeoPermissionResult
     )
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         binding = FragmentRequestBinding.inflate(inflater, container, false)
 
         binding.btnAllow.setOnClickListener {
             requestGeoPermissionLauncher.launch(
-                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION,
+                arrayOf(
+                    Manifest.permission.ACCESS_FINE_LOCATION,
 
-                    Manifest.permission.ACCESS_COARSE_LOCATION))
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+                )
+            )
 
         }
 
@@ -45,11 +53,12 @@ class RequestFragment : Fragment() {
     }
 
     private fun onGotGeoPermissionResult(grantResults: Map<String, Boolean>) {
-        if (grantResults.entries.all{ it.value }) {
+        if (grantResults.entries.all { it.value }) {
             onGeoPermissionGranted()
         } else {
             if (!shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION) &&
-                !shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_COARSE_LOCATION)) {
+                !shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_COARSE_LOCATION)
+            ) {
                 askUserForOpeningAppSettings()
             } else {
                 Toast.makeText(activity, R.string.toast_denied, Toast.LENGTH_SHORT).show()
@@ -62,7 +71,11 @@ class RequestFragment : Fragment() {
             Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
             Uri.fromParts("package", activity?.packageName, null)
         )
-        if (activity?.packageManager?.resolveActivity(appSettingsIntent, PackageManager.MATCH_DEFAULT_ONLY) == null) {
+        if (activity?.packageManager?.resolveActivity(
+                appSettingsIntent,
+                PackageManager.MATCH_DEFAULT_ONLY
+            ) == null
+        ) {
             Toast.makeText(activity, R.string.toast_denied_forever, Toast.LENGTH_SHORT).show()
         } else {
             AlertDialog.Builder(requireContext())

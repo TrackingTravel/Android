@@ -5,11 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.maximvs.trackingtravel.R
 import com.maximvs.trackingtravel.domain.Route
-import kotlinx.android.synthetic.main.fragment_route.view.*
 import kotlinx.android.synthetic.main.recyclerview_item.view.*
 
 
-class RouteListRecyclerAdapter(private val clickListener: OnItemClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class RouteListRecyclerAdapter(private val clickListener: OnItemClickListener) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     //Здесь у нас хранится список элементов для RV
     private val items = mutableListOf<Route>()
 
@@ -18,7 +18,9 @@ class RouteListRecyclerAdapter(private val clickListener: OnItemClickListener) :
 
     //В этом методе мы привязываем наш view holder и передаем туда "надутую" верстку нашего route
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.recyclerview_item, parent, false))
+        return ViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.recyclerview_item, parent, false)
+        )
     }
 
     //В этом методе будет привзяка полей из объекта Route, к view из xml

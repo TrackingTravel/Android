@@ -1,19 +1,18 @@
 package com.maximvs.trackingtravel.view.fragments
 
-
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.maximvs.trackingtravel.data.ApiConstants
 import com.maximvs.trackingtravel.databinding.FragmentDetailsBinding
 import com.maximvs.trackingtravel.domain.Route
-import kotlinx.android.synthetic.main.recyclerview_item.view.*
 
 
 class DetailsFragment : Fragment() {
+
     private lateinit var route: Route
     private lateinit var binding: FragmentDetailsBinding
 
@@ -28,25 +27,20 @@ class DetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setRouteDetails()
-
-
     }
 
     private fun setRouteDetails() {
         //Получаем наш route из переданного бандла
         route = arguments?.get("route") as Route
-
-        /*
-        binding.details.title = route.title
+        //Устанавливаем заголовок
+        binding.tvDetail.text = route.title
         //Устанавливаем картинку
         Glide.with(this)
             .load(ApiConstants.BASE_URL + "w780" + route.photo)
             .centerCrop()
-            .into(binding.detailsPhoto)
+            .into(binding.ivRd1)
         //Устанавливаем описание
-        binding.details.duration.text = route.description
-        */
-
+        // binding.detailsDescription.text = route.description
 
     }
 }

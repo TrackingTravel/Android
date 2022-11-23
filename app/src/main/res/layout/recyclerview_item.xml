@@ -15,7 +15,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/view"
+            android:id="@+id/photo"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
@@ -34,7 +34,7 @@
             android:layout_marginBottom="40dp"
             android:textSize="22sp"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintBottom_toBottomOf="@+id/photo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="Title"/>
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="13dp"
             android:layout_marginBottom="17dp"
-            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintBottom_toBottomOf="@+id/photo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
             app:srcCompat="@drawable/ic_baseline_access_time_24" />
@@ -58,7 +58,7 @@
             android:layout_marginBottom="17dp"
             android:textColor="@color/white"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintBottom_toBottomOf="@+id/photo"
             app:layout_constraintStart_toEndOf="@+id/iv_rv_item_1"
             app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
             tools:text="Duration"/>
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="18dp"
             android:layout_marginStart="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintBottom_toBottomOf="@+id/photo"
             app:layout_constraintStart_toEndOf="@+id/tv_rv_item_1"
             app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
             app:srcCompat="@drawable/ic_outline_near_me_24" />
@@ -82,7 +82,7 @@
             android:layout_marginBottom="17dp"
             android:textColor="@color/white"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintBottom_toBottomOf="@+id/photo"
             app:layout_constraintStart_toEndOf="@+id/iv_rv_item_2"
             app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
             tools:text="Distance Route"/>
@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="18dp"
-            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintBottom_toBottomOf="@+id/photo"
             app:layout_constraintStart_toEndOf="@+id/tv_rv_item_2"
             app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
             app:srcCompat="@drawable/ic_round_terrain_24" />
@@ -106,7 +106,7 @@
             android:layout_marginBottom="17dp"
             android:textColor="@color/white"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintBottom_toBottomOf="@+id/photo"
             app:layout_constraintStart_toEndOf="@+id/iv_rv_item_3"
             app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
             tools:text="HeightPeak"/>

@@ -103,7 +103,7 @@
                 android:textSize="24sp"
                 android:textStyle="bold"
                 tools:text="Title"/>
-            />
+
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"

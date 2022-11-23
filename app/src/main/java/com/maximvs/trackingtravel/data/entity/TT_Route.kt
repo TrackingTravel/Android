@@ -1,7 +1,10 @@
 package com.maximvs.trackingtravel.data.entity
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class TT_Route(
     @SerializedName("id")
     val id: Int,
@@ -23,8 +26,7 @@ data class TT_Route(
     val photo: List<TT_Photo>,
     @SerializedName("country")
     val country: Country
-
-)
+    ) : Parcelable
 
 
 
