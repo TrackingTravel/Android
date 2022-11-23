@@ -19,11 +19,11 @@ class RouteFragment : Fragment() {
 
 
     private lateinit var binding: FragmentRouteBinding
-    private var tracksDataBase = listOf<Route>()
+    private var routesDataBase = listOf<Route>()
         set(value) {
             if (field == value) return
             field = value
-           // tracksAdapter.addItems(field)
+           // routesAdapter.addItems(field)
         }
 
 
@@ -46,8 +46,8 @@ class RouteFragment : Fragment() {
         //находим наш RV
         //initRecyckler()
         //Кладем нашу БД в RV
-        viewModel.tracksListLiveData.observe(viewLifecycleOwner, Observer<List<Route>> {
-            tracksDataBase = it
+        viewModel.routesListLiveData.observe(viewLifecycleOwner, Observer<List<Route>> {
+            routesDataBase = it
         })
 
     }

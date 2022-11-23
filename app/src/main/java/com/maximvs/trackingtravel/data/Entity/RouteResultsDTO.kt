@@ -4,7 +4,7 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
-@Parcelize
+/*@Parcelize
 data class RouteResultsDTO (
         @SerializedName("page")
         val page: Int,
@@ -15,4 +15,6 @@ data class RouteResultsDTO (
         @SerializedName("total_results")
         val totalResults: Int
     ) : Parcelable
+
+ */
 

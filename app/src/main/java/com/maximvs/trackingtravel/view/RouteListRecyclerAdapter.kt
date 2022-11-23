@@ -7,7 +7,8 @@ import com.maximvs.trackingtravel.R
 import com.maximvs.trackingtravel.domain.Route
 import kotlinx.android.synthetic.main.fragment_route.view.*
 
-class RouteListRecyclerAdapter(private val clickListener: OnItemClickListener) :
+
+/* class RouteListRecyclerAdapter(private val clickListener: OnItemClickListener) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     //Здесь у нас хранится список элементов для RV
     private val items = mutableListOf<Route>()
@@ -22,7 +23,7 @@ class RouteListRecyclerAdapter(private val clickListener: OnItemClickListener) :
         )
     }
 
-    //В этом методе будет привзяка полей из объекта Film, к view из film_item.xml
+    //В этом методе будет привзяка полей из объекта Route, к view из route_item.xml
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         //Проверяем какой у нас ViewHolder
         when (holder) {
@@ -55,3 +56,5 @@ class RouteListRecyclerAdapter(private val clickListener: OnItemClickListener) :
         fun click(route: Route)
     }
 }
+
+ */
