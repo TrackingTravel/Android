@@ -12,7 +12,7 @@ class RouteFragmentViewModel : ViewModel() {
     private var interactor: Interactor = App.instance.interactor
 
     init {
-        interactor.getRoutesFromApi(1, object : ApiCallback {
+        interactor.getRoutesFromApi( object : ApiCallback {
             override fun onSuccess(routes: List<Route>) {
                 routesListLiveData.postValue(routes)
             }

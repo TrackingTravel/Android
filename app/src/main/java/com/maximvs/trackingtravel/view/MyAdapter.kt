@@ -1,4 +1,4 @@
-package com.maximvs
+package com.maximvs.trackingtravel.view
 
 import android.location.GnssAntennaInfo
 import android.view.LayoutInflater

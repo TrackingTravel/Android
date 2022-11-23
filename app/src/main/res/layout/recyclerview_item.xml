@@ -32,12 +32,12 @@
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
             android:layout_marginBottom="40dp"
-            android:text="Здесь будет какое-то название"
             android:textSize="22sp"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/view"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Title"/>
 
         <ImageView
             android:id="@+id/iv_rv_item_1"
@@ -56,12 +56,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:layout_marginBottom="17dp"
-            android:text="Время"
             android:textColor="@color/white"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/view"
             app:layout_constraintStart_toEndOf="@+id/iv_rv_item_1"
-            app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
+            tools:text="Duration"/>
 
         <ImageView
             android:id="@+id/iv_rv_item_2"
@@ -80,12 +80,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:layout_marginBottom="17dp"
-            android:text="Расстояние"
             android:textColor="@color/white"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/view"
             app:layout_constraintStart_toEndOf="@+id/iv_rv_item_2"
-            app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
+            tools:text="Distance Route"/>
 
         <ImageView
             android:id="@+id/iv_rv_item_3"
@@ -104,12 +104,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:layout_marginBottom="17dp"
-            android:text="Высота"
             android:textColor="@color/white"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/view"
             app:layout_constraintStart_toEndOf="@+id/iv_rv_item_3"
-            app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
+            tools:text="HeightPeak"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

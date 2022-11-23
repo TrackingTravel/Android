@@ -45,7 +45,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/btnBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_rd">
+        app:layout_constraintTop_toBottomOf="@+id/ll_rd"
+        android:id="@+id/details">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -98,10 +99,11 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 android:padding="20dp"
-                android:text="Здесь будет название маршрута"
                 android:textColor="@color/black"
                 android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:text="Title"/>
+            />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"

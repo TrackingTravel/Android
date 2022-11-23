@@ -16,7 +16,7 @@ class StartFragment : Fragment () {
         binding = FragmentStartBinding.inflate(inflater, container, false)
 
         binding.btnBtn.setOnClickListener {
-            (activity as MainActivity).startDetailsFragment()
+            (activity as MainActivity).startRouteFragment()
         }
 
         return binding.root

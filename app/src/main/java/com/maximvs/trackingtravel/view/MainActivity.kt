@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.maximvs.trackingtravel.R
 import com.maximvs.trackingtravel.databinding.ActivityMainBinding
+import com.maximvs.trackingtravel.domain.Route
 import com.maximvs.trackingtravel.view.fragments.DetailsFragment
 import com.maximvs.trackingtravel.view.fragments.RequestFragment
 import com.maximvs.trackingtravel.view.fragments.RouteFragment
@@ -16,18 +17,12 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-            supportFragmentManager
-                .beginTransaction()
-                .add(R.id.fragment_container, StartFragment())
-                .addToBackStack(null)
-                .commit()
-
         supportFragmentManager
             .beginTransaction()
             .add(R.id.fragment_container, StartFragment())
             .addToBackStack(null)
             .commit()
+
 
     }
 
@@ -47,12 +42,17 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    fun startDetailsFragment() {
+    fun launchDetailsFragment(route: Route) {
+        val bundle = Bundle()
+        bundle.putParcelable("route", route)
+        val fragment = DetailsFragment()
+        fragment.arguments = bundle
+
+        //Запускаем фрагмент
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.fragment_container, DetailsFragment())
+            .replace(R.id.fragment_container, fragment)
             .addToBackStack(null)
             .commit()
-    }}
-
-
+    }
+}

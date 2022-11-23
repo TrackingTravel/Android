@@ -1,6 +1,6 @@
 package com.maximvs.trackingtravel.utils
 
-import com.maximvs.trackingtravel.data.Entity.TT_Route
+import com.maximvs.trackingtravel.data.entity.TT_Route
 import com.maximvs.trackingtravel.domain.Route
 
 object Converter {
@@ -10,7 +10,9 @@ object Converter {
             result.add(Route(
                 title = it.title,
                 photo = it.photo,
-                description = it.description,
+                duration = it.durationRoute,
+                distanceRoute = it.distanceRoute,
+                heightPeak = it.heightPeak
 
             ))
         }

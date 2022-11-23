@@ -1,4 +1,4 @@
-package com.maximvs.trackingtravel.data.Entity
+package com.maximvs.trackingtravel.data.entity
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

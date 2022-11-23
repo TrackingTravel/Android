@@ -26,8 +26,8 @@ class App : Application() {
         //Создаем кастомный клиент
         val okHttpClient = OkHttpClient.Builder()
             //Настриваем таймауты для медленного интрнета
-            .callTimeout(30, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS)
+            .callTimeout(Constants.CALL_TIMEOUT.toLong(), TimeUnit.SECONDS)
+            .readTimeout(Constants.READ_TIMEOUT.toLong(), TimeUnit.SECONDS)
             //Добавляем логгер
             .addInterceptor(HttpLoggingInterceptor().apply {
                 if (BuildConfig.DEBUG) {

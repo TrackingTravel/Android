@@ -1,6 +1,6 @@
 package com.maximvs.trackingtravel.data
 
-import com.maximvs.trackingtravel.data.Entity.RoutesWrapper
+import com.maximvs.trackingtravel.data.entity.RoutesWrapper
 import retrofit2.Call
 import retrofit2.http.GET
 
