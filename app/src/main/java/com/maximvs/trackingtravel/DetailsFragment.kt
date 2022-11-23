@@ -11,6 +11,7 @@ import com.maximvs.trackingtravel.databinding.FragmentDetailsBinding
 class DetailsFragment : Fragment() {
     private lateinit var binding: FragmentDetailsBinding
 
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentDetailsBinding.inflate(inflater, container, false)
 

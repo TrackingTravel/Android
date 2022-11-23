@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.maximvs.trackingtravel.databinding.ActivityMainBinding
 
 
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,6 +17,8 @@ class MainActivity : AppCompatActivity() {
                 .add(R.id.fragment_container, StartFragment())
                 .addToBackStack(null)
                 .commit()
+
+
     }
 
     fun startRequestFragment (){
