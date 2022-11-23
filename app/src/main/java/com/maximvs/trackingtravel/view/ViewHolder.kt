@@ -6,6 +6,7 @@ import com.maximvs.MyAdapter
 import com.maximvs.trackingtravel.domain.Route
 import kotlinx.android.synthetic.main.fragment_details.view.*
 
+/*
 class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         //Привязываем view из layout к переменным
         private val title = itemView.tv_detail
@@ -19,3 +20,4 @@ class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         }
 
 }
+*/
