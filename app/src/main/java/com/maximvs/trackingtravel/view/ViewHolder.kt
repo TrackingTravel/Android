@@ -20,13 +20,14 @@ class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         title.text = route.title
         //Устанавливаем постер
         //Указываем контейнер, в которм будет "жить" наша картинка
-        Glide.with(itemView)
-            //Загружаем сам ресурс
-            .load(ApiConstants.IMAGE_URL + "photo_2022-10-31_00-02-52.jpg")
-            //Центруем изображение
-            .centerCrop()
-            //Указываем ImageView, куда будем загружать изображение
-            .into(photo)
+        //TODO Обработать список картинок
+//        Glide.with(itemView)
+//            //Загружаем сам ресурс
+//            .load(ApiConstants.IMAGE_URL + "photo_2022-10-31_00-02-52.jpg")
+//            //Центруем изображение
+//            .centerCrop()
+//            //Указываем ImageView, куда будем загружать изображение
+//            .into(photo)
         //Устанавливаем описание
         duration.text = route.duration
         distanceRoute.text = route.distanceRoute

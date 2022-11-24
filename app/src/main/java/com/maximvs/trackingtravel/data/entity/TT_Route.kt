@@ -21,7 +21,7 @@ data class TT_Route(
     @SerializedName("durationRoute")
     val durationRoute: String,
     @SerializedName("mapPhoto")
-    val mapPhoto: String,
+    val mapPhoto: MapPhoto,
     @SerializedName("photo")
     val photo: List<TT_Photo>,
     @SerializedName("country")
