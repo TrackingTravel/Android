@@ -37,16 +37,12 @@ class App : Application() {
             .build()
         //Создаем ретрофит
         val retrofit = Retrofit.Builder()
-            //Указываем базовый URL из констант
             .baseUrl(ApiConstants.BASE_URL)
-            //Добавляем конвертер
             .addConverterFactory(GsonConverterFactory.create())
-            //Добавляем кастомный клиент
             .client(okHttpClient)
             .build()
         //Создаем сам сервис с методами для запросов
         retrofitService = retrofit.create(TrackingTravelAPI::class.java)
-        //Инициализируем интерактор
         interactor = Interactor(repo, retrofitService)
     }
 

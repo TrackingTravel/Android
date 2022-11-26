@@ -18,3 +18,6 @@ data class MapPhoto(
     val size: Int
 ) : Parcelable
 
+
+
+

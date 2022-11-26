@@ -1,7 +1,7 @@
 package com.maximvs.trackingtravel.data
 
 object ApiConstants {
-    const val BASE_URL = "http://trackingtravel.me:8080/api/"
-    const val IMAGE_URL = "http://trackingtravel.me:8080/dowland/photo/"
+    const val BASE_URL = "https://api.trackingtravel.me/"
+    const val IMAGE_URL = "https://trackingtravel.me/"
 
 }

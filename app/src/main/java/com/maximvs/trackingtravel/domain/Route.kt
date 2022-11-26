@@ -6,9 +6,8 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Route(
-
     val title: String,
-    val photo: List<TT_Photo>,
+    val photos: List<TT_Photo>,
     val duration: String,
     val distanceRoute: String,
     val heightPeak: String
