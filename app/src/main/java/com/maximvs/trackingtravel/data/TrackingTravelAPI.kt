@@ -5,7 +5,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface TrackingTravelAPI {
-    @GET("https://api.trackingtravel.me/test-routes")
+    @GET("test-routes")
     fun getAllRoutes(
 
     ): Call<List<TT_Route>>
