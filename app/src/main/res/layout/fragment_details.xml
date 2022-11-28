@@ -35,7 +35,7 @@
             android:paddingTop="16dp"
             android:paddingEnd="12dp"
             android:paddingBottom="12dp"
-            android:text="Будет название" />
+            tools:text="Title" />
 
     </LinearLayout>
 
@@ -92,7 +92,7 @@
             </HorizontalScrollView>
 
             <TextView
-                android:id="@+id/tv_detail"
+                android:id="@+id/tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -128,21 +128,21 @@
                     android:textColor="#201A1B"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/tv_det_2"/>
+                    app:layout_constraintEnd_toStartOf="@id/tv_duration"/>
 
                 <TextView
-                    android:id="@+id/tv_det_2"
+                    android:id="@+id/tv_duration"
                     android:layout_width="124dp"
                     android:layout_height="20dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    android:text="11ч11м"
                     android:textSize="14sp"
                     android:textColor="#201A1B"
                     android:gravity="end"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toEndOf="@id/tv_det_1"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="Duration"/>
 
                 
 
@@ -169,21 +169,21 @@
                     android:textColor="#201A1B"
                     app:layout_constraintTop_toTopOf="@id/tv_line_1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/tv_det_4"/>
+                    app:layout_constraintEnd_toStartOf="@id/tv_distanceRoute"/>
 
                 <TextView
-                    android:id="@+id/tv_det_4"
+                    android:id="@+id/tv_distanceRoute"
                     android:layout_width="124dp"
                     android:layout_height="20dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    android:text="42км"
                     android:textSize="14sp"
                     android:textColor="#201A1B"
                     android:gravity="end"
                     app:layout_constraintTop_toTopOf="@id/tv_line_1"
                     app:layout_constraintStart_toEndOf="@id/tv_det_3"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="Distance Route"/>
 
                 <View
                     android:id="@+id/tv_line_2"
