@@ -22,12 +22,12 @@ data class TT_Route(
     val durationRoute: String,
     @SerializedName("mapPhoto")
     val mapPhoto: List<MapPhoto>,
-    @SerializedName("photos")
-    val photos: List<TT_Photo>,
+    @SerializedName("photo")
+    val photo: List<TT_Photo>,
     @SerializedName("country")
     val country: Country
-    ) : Parcelable {
-}
+    ) : Parcelable
+
 
 
 

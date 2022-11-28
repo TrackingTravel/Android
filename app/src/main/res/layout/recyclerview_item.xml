@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <androidx.cardview.widget.CardView
-    android:id="@+id/item_container"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_container"
     android:layout_width="match_parent"
     android:layout_height="400dp"
     android:elevation="2dp"
     app:cardCornerRadius="15dp">
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
-
-            <ImageView
+        <ImageView
             android:id="@+id/photo"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -26,22 +24,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+            tools:src = "@tools:sample/avatars"/>
 
 
-    <TextView
+        <TextView
             android:id="@+id/tv_rv_item_title"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
             android:layout_marginBottom="40dp"
-            android:textSize="22sp"
             android:textColor="@color/black"
+            android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="@+id/photo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:text="Title"/>
+            tools:text="Title" />
 
         <ImageView
             android:id="@+id/iv_rv_item_1"
@@ -65,14 +63,14 @@
             app:layout_constraintBottom_toBottomOf="@+id/photo"
             app:layout_constraintStart_toEndOf="@+id/iv_rv_item_1"
             app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
-            tools:text="Duration"/>
+            tools:text="Duration" />
 
         <ImageView
             android:id="@+id/iv_rv_item_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="18dp"
             android:layout_marginStart="10dp"
+            android:layout_marginBottom="18dp"
             app:layout_constraintBottom_toBottomOf="@+id/photo"
             app:layout_constraintStart_toEndOf="@+id/tv_rv_item_1"
             app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
@@ -89,7 +87,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/photo"
             app:layout_constraintStart_toEndOf="@+id/iv_rv_item_2"
             app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
-            tools:text="Distance Route"/>
+            tools:text="Distance Route" />
 
         <ImageView
             android:id="@+id/iv_rv_item_3"
@@ -113,7 +111,6 @@
             app:layout_constraintBottom_toBottomOf="@+id/photo"
             app:layout_constraintStart_toEndOf="@+id/iv_rv_item_3"
             app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
-            tools:text="HeightPeak"/>
-
+            tools:text="HeightPeak" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

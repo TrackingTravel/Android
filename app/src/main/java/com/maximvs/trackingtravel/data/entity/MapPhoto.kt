@@ -12,6 +12,8 @@ data class MapPhoto(
     val name: String,
     @SerializedName("uri")
     val uri: String,
+    @SerializedName("url")
+    val url: String,
     @SerializedName("type")
     val type: String,
     @SerializedName("size")

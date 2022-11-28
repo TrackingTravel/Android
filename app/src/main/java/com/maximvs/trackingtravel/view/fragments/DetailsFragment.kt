@@ -36,7 +36,7 @@ class DetailsFragment : Fragment() {
         binding.tvDetail.text = route.title
         //Устанавливаем картинку
         Glide.with(this)
-            .load(ApiConstants.BASE_URL + "w780" + route.photo)
+            .load(route.photos)
             .centerCrop()
             .into(binding.ivRd1)
         //Устанавливаем описание
