@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailsFragment">
+    tools:context=".view.fragments.DetailsFragment">
 
     <LinearLayout
         android:id="@+id/ll_rd"
@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:context=".DetailsFragment">
+        tools:context=".view.fragments.DetailsFragment">
 
         <android.widget.Button
             android:id="@+id/btn_detail_back"
@@ -35,7 +35,7 @@
             android:paddingTop="16dp"
             android:paddingEnd="12dp"
             android:paddingBottom="12dp"
-            android:text="Будет название" />
+            tools:text="Title" />
 
     </LinearLayout>
 
@@ -45,7 +45,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/btnBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_rd">
+        app:layout_constraintTop_toBottomOf="@+id/ll_rd"
+        android:id="@+id/details">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,6 +56,7 @@
             <HorizontalScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/tv_det_photo"
                 app:layout_constraintBottom_toBottomOf="@+id/btnBtn"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ll_rd">
@@ -62,44 +64,46 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="400dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:id="@+id/iv_container">
 
                     <ImageView
                         android:id="@+id/iv_rd_1"
                         android:layout_width="400dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/start_photo" />
+                        tools:src="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/iv_rd_2"
                         android:layout_width="400dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:scaleType="centerInside"
-                        app:srcCompat="@drawable/random_photo" />
+                        tools:src="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/iv_rd_3"
                         android:layout_width="400dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:scaleType="centerInside"
-                        app:srcCompat="@drawable/random_photo" />
+                        tools:src="@tools:sample/avatars" />
 
                 </LinearLayout>
             </HorizontalScrollView>
 
             <TextView
-                android:id="@+id/tv_detail"
+                android:id="@+id/tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 android:padding="20dp"
-                android:text="Здесь будет название маршрута"
                 android:textColor="@color/black"
                 android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:text="Title"/>
+
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -107,7 +111,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:background="#F7F7F7">
+                android:background="#F7F7F7"
+                android:id="@+id/tv_details_more">
 
                 
 
@@ -123,21 +128,21 @@
                     android:textColor="#201A1B"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/tv_det_2"/>
+                    app:layout_constraintEnd_toStartOf="@id/tv_duration"/>
 
                 <TextView
-                    android:id="@+id/tv_det_2"
+                    android:id="@+id/tv_duration"
                     android:layout_width="124dp"
                     android:layout_height="20dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    android:text="11ч11м"
                     android:textSize="14sp"
                     android:textColor="#201A1B"
                     android:gravity="end"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toEndOf="@id/tv_det_1"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="Duration"/>
 
                 
 
@@ -164,21 +169,21 @@
                     android:textColor="#201A1B"
                     app:layout_constraintTop_toTopOf="@id/tv_line_1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/tv_det_4"/>
+                    app:layout_constraintEnd_toStartOf="@id/tv_distanceRoute"/>
 
                 <TextView
-                    android:id="@+id/tv_det_4"
+                    android:id="@+id/tv_distanceRoute"
                     android:layout_width="124dp"
                     android:layout_height="20dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    android:text="42км"
                     android:textSize="14sp"
                     android:textColor="#201A1B"
                     android:gravity="end"
                     app:layout_constraintTop_toTopOf="@id/tv_line_1"
                     app:layout_constraintStart_toEndOf="@id/tv_det_3"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="Distance Route"/>
 
                 <View
                     android:id="@+id/tv_line_2"
