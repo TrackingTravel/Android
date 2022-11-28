@@ -3,7 +3,6 @@ package com.maximvs.trackingtravel.view
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.maximvs.trackingtravel.data.ApiConstants
 import com.maximvs.trackingtravel.domain.Route
 import kotlinx.android.synthetic.main.recyclerview_item.view.*
 
@@ -16,16 +15,18 @@ class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
 
     fun bind(route: Route) {
+
         title.text = route.title
 
-       /* Glide.with(itemView)
+       // val photos = listOf<photo>()
+        Glide.with(itemView)
             //Загружаем сам ресурс
-            .load(ApiConstants.IMAGE_URL + )
+            .load(route.photos[0].uri)
             //Центруем изображение
             .centerCrop()
             //Указываем ImageView, куда будем загружать изображение
             .into(photo)
-*/
+
 
 
         duration.text = route.duration

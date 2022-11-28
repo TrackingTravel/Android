@@ -39,8 +39,7 @@ class DetailsFragment : Fragment() {
             .load(route.photos)
             .centerCrop()
             .into(binding.ivRd1)
-        //Устанавливаем описание
-        // binding.detailsDescription.text = route.description
+         binding.detailsDescription.text = route.description
 
     }
 }
