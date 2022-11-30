@@ -270,13 +270,14 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/btnBtn"
+        android:id="@+id/btn_open_map"
         style="@style/Button_Start"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:stateListAnimator="@null"
         android:text="@string/open_map"
         android:textAllCaps="false"
+        android:clickable="true"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

@@ -15,7 +15,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.maximvs.trackingtravel.R
 import com.maximvs.trackingtravel.databinding.FragmentRequestBinding
-import com.maximvs.trackingtravel.domain.Route
 import com.maximvs.trackingtravel.view.MainActivity
 
 

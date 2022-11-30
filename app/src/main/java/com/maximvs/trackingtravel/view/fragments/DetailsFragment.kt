@@ -1,5 +1,7 @@
 package com.maximvs.trackingtravel.view.fragments
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,8 +11,6 @@ import com.bumptech.glide.Glide
 import com.maximvs.trackingtravel.databinding.FragmentDetailsBinding
 import com.maximvs.trackingtravel.domain.Route
 import kotlinx.android.synthetic.main.fragment_details.*
-import kotlinx.android.synthetic.main.fragment_details.view.*
-import kotlinx.android.synthetic.main.recyclerview_item.view.*
 
 
 class DetailsFragment : Fragment() {
@@ -28,7 +28,6 @@ class DetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setRoutesDetails()
-
     }
 
     private fun setRoutesDetails() {
@@ -52,6 +51,13 @@ class DetailsFragment : Fragment() {
             .centerCrop()
             .into(det_map)
 
+        binding.btnOpenMap.setOnClickListener {
+            val intent = Intent()
+            intent.action = Intent.ACTION_VIEW
+            Uri.parse(route.linkToMap)
+
+
+        }
 
 
     }

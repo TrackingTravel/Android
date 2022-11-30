@@ -13,7 +13,6 @@ class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val distanceRoute = itemView.tv_rv_item_2
     private val heightPeak = itemView.tv_rv_item_3
 
-
     fun bind(route: Route) {
 
         title.text = route.title

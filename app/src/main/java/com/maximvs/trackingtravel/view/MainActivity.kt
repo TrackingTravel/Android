@@ -1,13 +1,14 @@
 package com.maximvs.trackingtravel.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.replace
-import com.maximvs.trackingtravel.*
+import com.maximvs.trackingtravel.R
 import com.maximvs.trackingtravel.databinding.ActivityMainBinding
 import com.maximvs.trackingtravel.domain.Route
-import com.maximvs.trackingtravel.view.fragments.*
+import com.maximvs.trackingtravel.view.fragments.DetailsFragment
+import com.maximvs.trackingtravel.view.fragments.RouteFragment
+import com.maximvs.trackingtravel.view.fragments.StartFragment
 
 
 class MainActivity : AppCompatActivity() {

@@ -10,7 +10,6 @@ class RouteFragmentViewModel : ViewModel() {
 
     val routesListLiveData: MutableLiveData<List<Route>> = MutableLiveData()
 
-    //Инициализируем интерактор
     private var interactor: Interactor = App.instance.interactor
 
     init {
