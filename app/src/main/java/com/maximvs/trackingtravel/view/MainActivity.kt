@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-   fun startRequestFragment (){
+    fun startRequestFragment (){
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_container, RequestFragment())
@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager
             .beginTransaction()
-            .add(R.id.fragment_container, fragment)
+            .replace(R.id.fragment_container, fragment)
             .addToBackStack(null)
             .commit()
     }
@@ -86,4 +86,3 @@ class MainActivity : AppCompatActivity() {
 private fun FragmentTransaction.remove(): FragmentTransaction {
     TODO("Not yet implemented")
 }
-

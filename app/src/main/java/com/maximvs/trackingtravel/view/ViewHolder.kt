@@ -7,6 +7,7 @@ import com.maximvs.trackingtravel.domain.Route
 import kotlinx.android.synthetic.main.recyclerview_item.view.*
 
 class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
     private val title = itemView.tv_rv_item_title
     private var photo = itemView.photo
     private val duration = itemView.tv_rv_item_1
