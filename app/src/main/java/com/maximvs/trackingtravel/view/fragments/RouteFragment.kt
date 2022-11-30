@@ -9,13 +9,13 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.maximvs.trackingtravel.view.TopSpacingItemDecoration
-import com.maximvs.trackingtravel.databinding.FragmentRouteBinding
 import com.maximvs.trackingtravel.domain.Route
 import com.maximvs.trackingtravel.view.MainActivity
 import com.maximvs.trackingtravel.view.RouteListRecyclerAdapter
 import com.maximvs.trackingtravel.viewmodel.RouteFragmentViewModel
 import kotlinx.android.synthetic.main.fragment_route.*
 import androidx.appcompat.widget.SearchView
+import com.maximvs.trackingtravel.databinding.FragmentRouteBinding
 import java.util.*
 
 
@@ -38,6 +38,7 @@ class RouteFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        retainInstance = true
     }
 
     override fun onCreateView(
