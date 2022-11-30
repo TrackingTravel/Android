@@ -79,6 +79,7 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_container, RouteFragment())
+            .addToBackStack(null)
             .commit()
     }
 }
