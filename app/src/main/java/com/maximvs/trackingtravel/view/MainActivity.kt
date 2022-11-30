@@ -9,6 +9,7 @@ import com.maximvs.trackingtravel.domain.Route
 import com.maximvs.trackingtravel.view.fragments.DetailsFragment
 import com.maximvs.trackingtravel.view.fragments.RouteFragment
 import com.maximvs.trackingtravel.view.fragments.StartFragment
+import kotlinx.android.synthetic.main.recyclerview_item.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -26,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager
             .beginTransaction()
             .add(R.id.fragment_container, StartFragment())
-            .addToBackStack(null)
             .commit()
     }
 
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.fragment_container, fragment)
+            .add(R.id.fragment_container, fragment)
             .addToBackStack(null)
             .commit()
     }

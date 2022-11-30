@@ -30,6 +30,7 @@ class DetailsFragment : Fragment() {
         setRoutesDetails()
     }
 
+
     private fun setRoutesDetails() {
        route = arguments?.get("route") as Route
 
