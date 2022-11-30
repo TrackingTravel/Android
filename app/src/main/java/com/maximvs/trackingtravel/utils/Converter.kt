@@ -10,15 +10,15 @@ object Converter {
         list?.forEach {
             result.add(
                 Route(
-                    title = it.title,
-                    photos = it.photo,
-                    duration = it.durationRoute,
-                    distanceRoute = it.distanceRoute,
-                    heightPeak = it.heightPeak,
                     id = it.id,
+                    title = it.title,
                     description = it.description,
                     linkToMap = it.linkToMap,
+                    heightPeak = it.heightPeak,
+                    distanceRoute = it.distanceRoute,
+                    duration = it.durationRoute,
                     mapPhoto = it.mapPhoto,
+                    photos = it.photo,
                     country = it.country
 
                 )

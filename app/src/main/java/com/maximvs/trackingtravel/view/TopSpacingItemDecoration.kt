@@ -1,11 +1,10 @@
-package com.maximvs.trackingtravel
+package com.maximvs.trackingtravel.view
 
 import android.content.res.Resources
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-// В RecyclerView нужны будут отступы между элементами, поэтому создаю класс для этого:
 class TopSpacingItemDecoration (private val paddingInDp: Int): RecyclerView.ItemDecoration() {
     private val Int.convertPx: Int
         get() = (this * Resources.getSystem().displayMetrics.density).toInt()

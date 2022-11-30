@@ -9,7 +9,6 @@ import com.maximvs.trackingtravel.domain.Route
 import com.maximvs.trackingtravel.view.fragments.DetailsFragment
 import com.maximvs.trackingtravel.view.fragments.RouteFragment
 import com.maximvs.trackingtravel.view.fragments.StartFragment
-import kotlinx.android.synthetic.main.recyclerview_item.*
 
 
 class MainActivity : AppCompatActivity() {
