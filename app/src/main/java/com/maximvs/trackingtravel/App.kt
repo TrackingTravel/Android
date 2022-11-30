@@ -25,7 +25,6 @@ class App : Application() {
         repo = MainRepository()
         //Создаем кастомный клиент
         val okHttpClient = OkHttpClient.Builder()
-            //Настриваем таймауты для медленного интрнета
             .callTimeout(Constants.CALL_TIMEOUT.toLong(), TimeUnit.SECONDS)
             .readTimeout(Constants.READ_TIMEOUT.toLong(), TimeUnit.SECONDS)
             //Добавляем логгер
@@ -35,7 +34,7 @@ class App : Application() {
                 }
             })
             .build()
-        //Создаем ретрофит
+
         val retrofit = Retrofit.Builder()
             .baseUrl(ApiConstants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())

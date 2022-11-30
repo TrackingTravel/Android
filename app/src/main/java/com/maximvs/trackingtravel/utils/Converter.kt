@@ -1,6 +1,5 @@
 package com.maximvs.trackingtravel.utils
 
-import com.maximvs.trackingtravel.data.entity.MapPhoto
 import com.maximvs.trackingtravel.data.entity.TT_Route
 import com.maximvs.trackingtravel.domain.Route
 

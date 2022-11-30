@@ -15,6 +15,9 @@ import com.maximvs.trackingtravel.view.MainActivity
 import com.maximvs.trackingtravel.view.RouteListRecyclerAdapter
 import com.maximvs.trackingtravel.viewmodel.RouteFragmentViewModel
 import kotlinx.android.synthetic.main.fragment_route.*
+import androidx.appcompat.widget.SearchView
+import java.util.*
+
 
 class RouteFragment : Fragment() {
     private val viewModel by lazy {
