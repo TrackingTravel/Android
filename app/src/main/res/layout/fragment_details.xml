@@ -47,6 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll_rd"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
         android:id="@+id/scr_details"
         app:toolbarId="@id/vertical_container">
 
@@ -258,9 +259,10 @@
 
             <ImageView
                 android:id="@+id/det_map"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="400dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="56dp"
                 android:scaleType="centerInside"
                 app:srcCompat="@drawable/request_photo"
                 app:layout_constraintTop_toBottomOf="@id/tv_det_show_desc"

@@ -1,5 +1,6 @@
 package com.maximvs.trackingtravel.view.fragments
 
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -8,8 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.maximvs.trackingtravel.R
 import com.maximvs.trackingtravel.databinding.FragmentDetailsBinding
 import com.maximvs.trackingtravel.domain.Route
+import com.maximvs.trackingtravel.view.MainActivity
 import kotlinx.android.synthetic.main.fragment_details.*
 
 
@@ -27,7 +30,12 @@ class DetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         setRoutesDetails()
+
+        binding.btnDetailBack.setOnClickListener {
+            (activity as MainActivity).removeDetailsFragment()
+        }
     }
 
 
