@@ -89,7 +89,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/photo"
             app:layout_constraintStart_toEndOf="@+id/iv_rv_item_2"
             app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
-            tools:text="Distance Route" />
+            tools:text="DistanceRoute" />
 
         <ImageView
             android:id="@+id/iv_rv_item_3"

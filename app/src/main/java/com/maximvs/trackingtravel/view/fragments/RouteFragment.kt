@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.maximvs.trackingtravel.TopSpacingItemDecoration
+import com.maximvs.trackingtravel.view.TopSpacingItemDecoration
 import com.maximvs.trackingtravel.databinding.FragmentRouteBinding
 import com.maximvs.trackingtravel.domain.Route
 import com.maximvs.trackingtravel.view.MainActivity
@@ -48,12 +48,12 @@ class RouteFragment : Fragment() {
         binding = FragmentRouteBinding.inflate(inflater, container, false)
         return binding.root
 
-       }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // initSearchView()
+        initSearchView()
 
         initRecyckler()
         //Кладем нашу БД в RV
@@ -63,19 +63,17 @@ class RouteFragment : Fragment() {
 
     }
 
-    /*
-    private fun initSearchView() {
-        search_view.setOnClickListener {
-            search_view.isIconified = false
-        }
 
+    private fun initSearchView() {
+        binding.search.setOnClickListener {
+            search.isIconified = false
+        }
         //Подключаем слушателя изменений введенного текста в поиска
-        search_view.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             //Этот метод отрабатывает при нажатии кнопки "поиск" на софт клавиатуре
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return true
             }
-
             //Этот метод отрабатывает на каждое изменения текста
             override fun onQueryTextChange(newText: String): Boolean {
                 //Если ввод пуст то вставляем в адаптер всю БД
@@ -86,8 +84,8 @@ class RouteFragment : Fragment() {
                 //Фильтруем список на поискк подходящих сочетаний
                 val result = routesDataBase.filter {
                     //Чтобы все работало правильно, нужно и запроси и имя фильма приводить к нижнему регистру
-                    it.title.toLowerCase(Locale.getDefault())
-                        .contains(newText.toLowerCase(Locale.getDefault()))
+                    it.title.lowercase(Locale.getDefault())
+                        .contains(newText.lowercase(Locale.getDefault()))
                 }
                 //Добавляем в адаптер
                 routesAdapter.addItems(result)
@@ -96,7 +94,6 @@ class RouteFragment : Fragment() {
         })
     }
 
-     */
 
     private fun initRecyckler() {
         recycler_view.apply {

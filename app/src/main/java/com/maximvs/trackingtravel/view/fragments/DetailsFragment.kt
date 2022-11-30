@@ -51,7 +51,7 @@ class DetailsFragment : Fragment() {
             .into(iv_rd_1)
 
         binding.duration.text = route.duration
-        binding.distanceRoute.text =route.distanceRoute
+        binding.distanceRoute.text = route.distanceRoute
         binding.heightPeak.text = route.heightPeak
         binding.description.text = route.description
 
@@ -64,8 +64,6 @@ class DetailsFragment : Fragment() {
             val intent = Intent()
             intent.action = Intent.ACTION_VIEW
             Uri.parse(route.linkToMap)
-
-
         }
 
 
