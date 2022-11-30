@@ -5,7 +5,8 @@
         android:id="@+id/menu_route_home"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="@string/route"
-        app:showAsAction="withText"/>
+        app:showAsAction="withText"
+        app:background="@drawable/background_home_icon"/>
     <item
         android:id="@+id/menu_route_settings"
         android:icon="@drawable/ic_outline_settings_24"
