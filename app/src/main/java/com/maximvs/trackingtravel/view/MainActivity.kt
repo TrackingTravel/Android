@@ -3,10 +3,12 @@ package com.maximvs.trackingtravel.view
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.maximvs.trackingtravel.R
 import com.maximvs.trackingtravel.databinding.ActivityMainBinding
 import com.maximvs.trackingtravel.domain.Route
 import com.maximvs.trackingtravel.view.fragments.DetailsFragment
+import com.maximvs.trackingtravel.view.fragments.RequestFragment
 import com.maximvs.trackingtravel.view.fragments.RouteFragment
 import com.maximvs.trackingtravel.view.fragments.StartFragment
 import kotlinx.android.synthetic.main.recyclerview_item.*
@@ -30,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-   /* fun startRequestFragment (){
+   fun startRequestFragment (){
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_container, RequestFragment())
@@ -38,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    */
+
 
     fun startRouteFragment() {
 
@@ -71,5 +73,17 @@ class MainActivity : AppCompatActivity() {
             .addToBackStack(null)
             .commit()
     }
+
+    fun removeDetailsFragment() {
+
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, RouteFragment())
+            .commit()
+    }
+}
+
+private fun FragmentTransaction.remove(): FragmentTransaction {
+    TODO("Not yet implemented")
 }
 
