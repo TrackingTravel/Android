@@ -42,7 +42,7 @@ class DetailsFragment : Fragment() {
     private fun setRoutesDetails() {
         route = arguments?.get("route") as Route
 
-        binding.search.text = route.title
+        binding.tvSearch.text = route.title
         binding.title.text = route.title
 
         Glide.with(this)

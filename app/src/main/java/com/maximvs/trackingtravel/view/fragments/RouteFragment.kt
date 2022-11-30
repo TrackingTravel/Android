@@ -38,7 +38,6 @@ class RouteFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        retainInstance = true
     }
 
     override fun onCreateView(
