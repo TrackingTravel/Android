@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.maximvs.trackingtravel.TopSpacingItemDecoration
 import com.maximvs.trackingtravel.databinding.FragmentRouteBinding
 import com.maximvs.trackingtravel.domain.Route
 import com.maximvs.trackingtravel.view.MainActivity
@@ -26,7 +27,7 @@ class RouteFragment : Fragment() {
         set(value) {
             //Если придет такое же значение то мы выходим из метода
             if (field == value) return
-            //Если прило другое значение, то кладем его в переменную
+            //Если пришло другое значение, то кладем его в переменную
             field = value
             //Обновляем RV адаптер
             routesAdapter.addItems(field)
@@ -43,7 +44,8 @@ class RouteFragment : Fragment() {
     ): View {
         binding = FragmentRouteBinding.inflate(inflater, container, false)
         return binding.root
-    }
+
+       }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -103,6 +105,7 @@ class RouteFragment : Fragment() {
                 })
             //Присваиваем адаптер
             adapter = routesAdapter
+            addItemDecoration(TopSpacingItemDecoration(5))  //Применяю декоратор для отступов
             //Присвои layoutmanager
             layoutManager = LinearLayoutManager(requireContext())
 

@@ -33,7 +33,7 @@ class DetailsFragment : Fragment() {
         //Получаем наш route из переданного бандла
         route = arguments?.get("route") as Route
         //Устанавливаем заголовок
-       // binding.tv_title.text = route.title
+        //binding.tv_title.text = route.title
         //Устанавливаем картинку
         Glide.with(this)
             .load(route.photos)
