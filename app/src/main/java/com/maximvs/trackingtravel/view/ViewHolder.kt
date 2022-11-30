@@ -18,16 +18,10 @@ class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         title.text = route.title
 
-       // val photos = listOf<photo>()
         Glide.with(itemView)
-            //Загружаем сам ресурс
             .load(route.photos[0].uri)
-            //Центруем изображение
             .centerCrop()
-            //Указываем ImageView, куда будем загружать изображение
             .into(photo)
-
-
 
         duration.text = route.duration
         distanceRoute.text = route.distanceRoute
