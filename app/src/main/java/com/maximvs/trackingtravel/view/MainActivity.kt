@@ -11,8 +11,9 @@ import com.maximvs.trackingtravel.view.fragments.DetailsFragment
 import com.maximvs.trackingtravel.view.fragments.RequestFragment
 import com.maximvs.trackingtravel.view.fragments.RouteFragment
 import com.maximvs.trackingtravel.view.fragments.StartFragment
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -31,14 +32,13 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    fun startRequestFragment (){
+    fun startRequestFragment() {
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_container, RequestFragment())
             .addToBackStack(null)
             .commit()
     }
-
 
 
     fun startRouteFragment() {
@@ -63,7 +63,8 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    private fun checkFragmentExistence(tag: String): Fragment? = supportFragmentManager.findFragmentByTag(tag)
+    private fun checkFragmentExistence(tag: String): Fragment? =
+        supportFragmentManager.findFragmentByTag(tag)
 
     private fun changeFragment(fragment: Fragment, tag: String) {
         supportFragmentManager
