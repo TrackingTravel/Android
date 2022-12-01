@@ -5,6 +5,7 @@ import com.maximvs.trackingtravel.data.ApiConstants
 import com.maximvs.trackingtravel.data.MainRepository
 import com.maximvs.trackingtravel.data.TrackingTravelAPI
 import com.maximvs.trackingtravel.domain.Interactor
+import dagger.hilt.android.HiltAndroidApp
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -12,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 
-
+@HiltAndroidApp
 class App : Application() {
     lateinit var repo: MainRepository
     lateinit var interactor: Interactor

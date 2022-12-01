@@ -5,6 +5,8 @@ import androidx.lifecycle.ViewModel
 import com.maximvs.trackingtravel.App
 import com.maximvs.trackingtravel.domain.Interactor
 import com.maximvs.trackingtravel.domain.Route
+import javax.inject.Inject
+
 
 class RouteFragmentViewModel : ViewModel() {
 

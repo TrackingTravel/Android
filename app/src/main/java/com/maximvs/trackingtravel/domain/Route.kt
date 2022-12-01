@@ -4,7 +4,7 @@ import android.os.Parcelable
 import com.maximvs.trackingtravel.data.entity.Country
 import com.maximvs.trackingtravel.data.entity.MapPhoto
 import com.maximvs.trackingtravel.data.entity.TT_Photo
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 
 @Parcelize

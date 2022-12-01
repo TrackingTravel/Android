@@ -15,7 +15,6 @@ import com.maximvs.trackingtravel.view.MainActivity
 import com.maximvs.trackingtravel.view.RouteListRecyclerAdapter
 import com.maximvs.trackingtravel.view.TopSpacingItemDecoration
 import com.maximvs.trackingtravel.viewmodel.RouteFragmentViewModel
-import kotlinx.android.synthetic.main.fragment_route.*
 import java.util.*
 
 
@@ -66,10 +65,10 @@ class RouteFragment : Fragment() {
 
     private fun initSearchView() {
         binding.search.setOnClickListener {
-            search.isIconified = false
+            binding.search.isIconified = false
         }
         //Подключаем слушателя изменений введенного текста в поиска
-        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+        binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             //Этот метод отрабатывает при нажатии кнопки "поиск" на софт клавиатуре
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return true
@@ -97,7 +96,7 @@ class RouteFragment : Fragment() {
 
 
     private fun initRecyckler() {
-        recycler_view.apply {
+        binding.recyclerView.apply {
             routesAdapter =
                 RouteListRecyclerAdapter(object : RouteListRecyclerAdapter.OnItemClickListener {
                     override fun click(route: Route) {
