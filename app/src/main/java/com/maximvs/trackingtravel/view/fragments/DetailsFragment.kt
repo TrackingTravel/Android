@@ -1,6 +1,5 @@
 package com.maximvs.trackingtravel.view.fragments
 
-import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -9,11 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import com.maximvs.trackingtravel.R
 import com.maximvs.trackingtravel.databinding.FragmentDetailsBinding
 import com.maximvs.trackingtravel.domain.Route
 import com.maximvs.trackingtravel.view.MainActivity
-import kotlinx.android.synthetic.main.fragment_details.*
 
 
 class DetailsFragment : Fragment() {
@@ -48,7 +45,7 @@ class DetailsFragment : Fragment() {
         Glide.with(this)
             .load(route.photos[0].uri)
             .centerCrop()
-            .into(iv_rd_1)
+            .into(binding.ivRd1)
 
         binding.duration.text = route.duration
         binding.distanceRoute.text = route.distanceRoute
@@ -58,7 +55,7 @@ class DetailsFragment : Fragment() {
         Glide.with(this)
             .load(route.mapPhoto[0].uri)
             .centerCrop()
-            .into(det_map)
+            .into(binding.detMap)
 
         binding.btnOpenMap.setOnClickListener {
             val intent = Intent()
