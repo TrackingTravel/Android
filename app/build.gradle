@@ -6,7 +6,6 @@ plugins {
     id 'kotlin-parcelize'
 
 
-
 }
 
 android {
@@ -69,14 +68,14 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.13.0'
 
     //Dagger
-    implementation 'com.google.dagger:dagger:2.39.1'
-    kapt 'com.google.dagger:dagger-compiler:2.39.1'
+    //implementation 'com.google.dagger:dagger:2.44'
+    //kapt 'com.google.dagger:dagger-compiler:2.44'
 
     //Hilt
-    implementation "com.google.dagger:hilt-android:2.28-alpha"
-    kapt "com.google.dagger:hilt-android-compiler:2.28-alpha"
-    
+    implementation "com.google.dagger:hilt-android:2.44"
+    kapt "com.google.dagger:hilt-android-compiler:2.44"
 
-
-
+}
+kapt {
+    correctErrorTypes = true
 }
