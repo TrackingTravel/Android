@@ -2,17 +2,17 @@ package com.maximvs.trackingtravel.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.maximvs.trackingtravel.App
 import com.maximvs.trackingtravel.domain.Interactor
 import com.maximvs.trackingtravel.domain.Route
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-
-class RouteFragmentViewModel : ViewModel() {
+@HiltViewModel
+class RouteFragmentViewModel @Inject constructor(
+    private val interactor: Interactor) : ViewModel() {
 
     val routesListLiveData: MutableLiveData<List<Route>> = MutableLiveData()
 
-    private var interactor: Interactor = App.instance.interactor
 
     init {
         interactor.getRoutesFromApi(object : ApiCallback {

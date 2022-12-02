@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.maximvs.trackingtravel.databinding.FragmentRouteBinding
 import com.maximvs.trackingtravel.domain.Route
@@ -15,13 +15,12 @@ import com.maximvs.trackingtravel.view.MainActivity
 import com.maximvs.trackingtravel.view.RouteListRecyclerAdapter
 import com.maximvs.trackingtravel.view.TopSpacingItemDecoration
 import com.maximvs.trackingtravel.viewmodel.RouteFragmentViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
-
+@AndroidEntryPoint
 class RouteFragment : Fragment() {
-    private val viewModel by lazy {
-        ViewModelProvider.NewInstanceFactory().create(RouteFragmentViewModel::class.java)
-    }
+    private val routeFragmentViewModel: RouteFragmentViewModel by viewModels()
     private lateinit var routesAdapter: RouteListRecyclerAdapter
     private lateinit var binding: FragmentRouteBinding
     private var routesDataBase = listOf<Route>()
@@ -56,7 +55,7 @@ class RouteFragment : Fragment() {
 
         initRecyckler()
         //Кладем нашу БД в RV
-        viewModel.routesListLiveData.observe(viewLifecycleOwner, Observer<List<Route>> {
+        routeFragmentViewModel.routesListLiveData.observe(viewLifecycleOwner, Observer<List<Route>> {
             routesDataBase = it
         })
 
