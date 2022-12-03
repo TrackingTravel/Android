@@ -9,7 +9,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class RouteFragmentViewModel @Inject constructor(
-    private val interactor: Interactor) : ViewModel() {
+    interactor: Interactor
+) : ViewModel() {
 
     val routesListLiveData: MutableLiveData<List<Route>> = MutableLiveData()
 

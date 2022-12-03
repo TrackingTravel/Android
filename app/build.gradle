@@ -47,10 +47,14 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation "androidx.fragment:fragment-ktx:1.5.4"
+
+    //Tests
     testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.hamcrest:hamcrest-library:2.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
-    implementation "androidx.fragment:fragment-ktx:1.5.4"
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.5.0'
 
     //XML
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
