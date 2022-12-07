@@ -4,7 +4,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.maximvs.trackingtravel.databinding.RecyclerviewItemBinding
-import com.maximvs.trackingtravel.domain.Route
+import com.maximvs.trackingtravel.data.entity.Route
 
 
 class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.maximvs.trackingtravel.databinding.FragmentDetailsBinding
-import com.maximvs.trackingtravel.domain.Route
+import com.maximvs.trackingtravel.data.entity.Route
 import com.maximvs.trackingtravel.view.MainActivity
 
 

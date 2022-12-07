@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.maximvs.trackingtravel.databinding.FragmentRouteBinding
-import com.maximvs.trackingtravel.domain.Route
+import com.maximvs.trackingtravel.data.entity.Route
 import com.maximvs.trackingtravel.view.MainActivity
 import com.maximvs.trackingtravel.view.RouteListRecyclerAdapter
 import com.maximvs.trackingtravel.view.TopSpacingItemDecoration
@@ -54,7 +54,6 @@ class RouteFragment : Fragment() {
         initSearchView()
 
         initRecyckler()
-        //Кладем нашу БД в RV
         routeFragmentViewModel.routesListLiveData.observe(viewLifecycleOwner, Observer<List<Route>> {
             routesDataBase = it
         })
@@ -66,27 +65,20 @@ class RouteFragment : Fragment() {
         binding.search.setOnClickListener {
             binding.search.isIconified = false
         }
-        //Подключаем слушателя изменений введенного текста в поиска
         binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            //Этот метод отрабатывает при нажатии кнопки "поиск" на софт клавиатуре
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return true
             }
 
-            //Этот метод отрабатывает на каждое изменения текста
             override fun onQueryTextChange(newText: String): Boolean {
-                //Если ввод пуст то вставляем в адаптер всю БД
                 if (newText.isEmpty()) {
                     routesAdapter.addItems(routesDataBase)
                     return true
                 }
-                //Фильтруем список на поискк подходящих сочетаний
                 val result = routesDataBase.filter {
-                    //Чтобы все работало правильно, нужно и запроси и имя фильма приводить к нижнему регистру
                     it.title.lowercase(Locale.getDefault())
                         .contains(newText.lowercase(Locale.getDefault()))
                 }
-                //Добавляем в адаптер
                 routesAdapter.addItems(result)
                 return true
             }
@@ -102,10 +94,8 @@ class RouteFragment : Fragment() {
                         (requireActivity() as MainActivity).launchDetailsFragment(route)
                     }
                 })
-            //Присваиваем адаптер
             adapter = routesAdapter
             addItemDecoration(TopSpacingItemDecoration(5))  //Применяю декоратор для отступов
-            //Присвои layoutmanager
             layoutManager = LinearLayoutManager(requireContext())
 
         }
