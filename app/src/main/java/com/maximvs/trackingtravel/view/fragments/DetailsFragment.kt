@@ -7,7 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestBuilder
+import com.maximvs.trackingtravel.ViewPagerAdapter
+import com.maximvs.trackingtravel.data.entity.TT_Photo
 import com.maximvs.trackingtravel.databinding.FragmentDetailsBinding
 import com.maximvs.trackingtravel.domain.Route
 import com.maximvs.trackingtravel.view.MainActivity
@@ -33,6 +37,18 @@ class DetailsFragment : Fragment() {
         binding.btnDetailBack.setOnClickListener {
             (activity as MainActivity).removeDetailsFragment()
         }
+
+        //Создаем адаптер
+        val pagerAdapter = ViewPagerAdapter()
+
+        //Привязываем созданный адаптер к нашему ViewPager, который у нас в разметке
+        binding.viewPager2.adapter = pagerAdapter
+
+        //Создаем список элементов, который передадим в адаптер
+        val pagerItems = route.photos
+
+        //Передаем список в адаптер
+        pagerAdapter.setItems(pagerItems)
     }
 
 
@@ -45,7 +61,7 @@ class DetailsFragment : Fragment() {
         Glide.with(this)
             .load(route.photos[0].uri)
             .centerCrop()
-            .into(binding.ivRd1)
+            .into(binding.viewPager2)
 
         binding.duration.text = route.duration
         binding.distanceRoute.text = route.distanceRoute
@@ -65,4 +81,8 @@ class DetailsFragment : Fragment() {
 
 
     }
+}
+
+private fun <TranscodeType> RequestBuilder<TranscodeType>.into(viewPager2: ViewPager2) {
+
 }
