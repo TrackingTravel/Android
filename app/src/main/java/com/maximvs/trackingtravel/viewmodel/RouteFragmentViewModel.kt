@@ -2,9 +2,10 @@ package com.maximvs.trackingtravel.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.maximvs.trackingtravel.data.entity.Route
 import com.maximvs.trackingtravel.domain.Interactor
-import com.maximvs.trackingtravel.domain.Route
 import dagger.hilt.android.lifecycle.HiltViewModel
+import java.util.concurrent.Executors
 import javax.inject.Inject
 
 @HiltViewModel
@@ -22,6 +23,9 @@ class RouteFragmentViewModel @Inject constructor(
             }
 
             override fun onFailure() {
+                Executors.newSingleThreadExecutor().execute {
+                    routesListLiveData.postValue(interactor.getRoutesFromDB())
+                }
             }
         })
     }

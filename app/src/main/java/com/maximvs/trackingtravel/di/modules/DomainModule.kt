@@ -6,7 +6,6 @@ import com.maximvs.trackingtravel.domain.Interactor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.components.SingletonComponent
 
 @Module
@@ -14,6 +13,7 @@ import dagger.hilt.components.SingletonComponent
 object DomainModule {
 
     @Provides
-    fun provideInteractor(repository: MainRepository, travelAPI: TrackingTravelAPI) = Interactor(repo = repository, retrofitService = travelAPI)
+    fun provideInteractor(repository: MainRepository, travelAPI: TrackingTravelAPI) =
+        Interactor(repo = repository, retrofitService = travelAPI)
 }
 
