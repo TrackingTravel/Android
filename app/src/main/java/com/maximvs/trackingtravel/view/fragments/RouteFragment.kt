@@ -61,7 +61,6 @@ class RouteFragment : Fragment() {
 
     }
 
-
     private fun initSearchView() {
         binding.search.setOnClickListener {
             binding.search.isIconified = false
@@ -92,7 +91,6 @@ class RouteFragment : Fragment() {
             }
         })
     }
-
 
     private fun initRecyckler() {
         binding.recyclerView.apply {

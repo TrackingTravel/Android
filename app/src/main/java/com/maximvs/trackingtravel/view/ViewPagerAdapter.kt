@@ -1,11 +1,9 @@
-package com.maximvs.trackingtravel
+package com.maximvs.trackingtravel.view
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import com.maximvs.trackingtravel.R
 import com.maximvs.trackingtravel.data.entity.TT_Photo
 
 class ViewPagerAdapter : RecyclerView.Adapter<PagerViewHolder>() {
@@ -25,7 +23,7 @@ class ViewPagerAdapter : RecyclerView.Adapter<PagerViewHolder>() {
     }
 
     //Этот метод наполняет список items, нужен нам чтобы делать это извне
-    fun setItems(list: List<TT_Photo>) {
+    fun addItems(list: List<TT_Photo>) {
         items.clear()
         items.addAll(list)
     }

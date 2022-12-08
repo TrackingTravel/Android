@@ -10,11 +10,10 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestBuilder
-import com.maximvs.trackingtravel.ViewPagerAdapter
-import com.maximvs.trackingtravel.data.entity.TT_Photo
 import com.maximvs.trackingtravel.databinding.FragmentDetailsBinding
 import com.maximvs.trackingtravel.domain.Route
 import com.maximvs.trackingtravel.view.MainActivity
+import com.maximvs.trackingtravel.view.ViewPagerAdapter
 
 
 class DetailsFragment : Fragment() {
@@ -48,7 +47,7 @@ class DetailsFragment : Fragment() {
         val pagerItems = route.photos
 
         //Передаем список в адаптер
-        pagerAdapter.setItems(pagerItems)
+        pagerAdapter.addItems(pagerItems)
     }
 
 
