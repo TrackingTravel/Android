@@ -2,6 +2,7 @@ package com.maximvs.trackingtravel.domain
 
 import com.maximvs.trackingtravel.data.MainRepository
 import com.maximvs.trackingtravel.data.TrackingTravelAPI
+import com.maximvs.trackingtravel.data.entity.Route
 import com.maximvs.trackingtravel.data.entity.TT_Route
 import com.maximvs.trackingtravel.utils.Converter
 import com.maximvs.trackingtravel.viewmodel.RouteFragmentViewModel
@@ -26,4 +27,7 @@ class Interactor(private val repo: MainRepository, private val retrofitService: 
             }
         })
     }
+
+    fun getRoutesFromDB(): List<Route> = repo.getAllFromDB()
+
 }

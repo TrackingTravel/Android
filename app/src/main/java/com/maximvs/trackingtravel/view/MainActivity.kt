@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.maximvs.trackingtravel.R
 import com.maximvs.trackingtravel.databinding.ActivityMainBinding
-import com.maximvs.trackingtravel.domain.Route
+import com.maximvs.trackingtravel.data.entity.Route
 import com.maximvs.trackingtravel.view.fragments.DetailsFragment
 import com.maximvs.trackingtravel.view.fragments.RequestFragment
 import com.maximvs.trackingtravel.view.fragments.RouteFragment

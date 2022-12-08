@@ -18,7 +18,11 @@ data class MapPhoto(
     val type: String,
     @SerializedName("size")
     val size: Int
-) : Parcelable
+) : Parcelable {
+    override fun toString(): String {
+        return "$id:$name,$uri,$url,$type,$size"
+    }
+}
 
 
 
