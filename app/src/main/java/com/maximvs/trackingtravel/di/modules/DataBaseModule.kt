@@ -15,7 +15,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class DataBaseModule {
+object DataBaseModule {
 
     @Singleton
     @Provides
@@ -25,6 +25,7 @@ class DataBaseModule {
             AppDatabase::class.java,
             "route_db"
         ).build().routeDao()
+
 
     @Provides
     @Singleton
