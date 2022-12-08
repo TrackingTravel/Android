@@ -8,23 +8,23 @@ import com.maximvs.trackingtravel.data.db.AppDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 
 @Module
 @InstallIn(SingletonComponent::class)
-class DataBaseModule {
+object DataBaseModule {
 
     @Singleton
     @Provides
-    fun provideRouteDao(@ApplicationContext context: Context) =
+    fun provideRouteDao(context: Context) =
         Room.databaseBuilder(
             context,
             AppDatabase::class.java,
             "route_db"
         ).build().routeDao()
+
 
     @Provides
     @Singleton
