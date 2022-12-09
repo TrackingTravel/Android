@@ -45,7 +45,6 @@ class RouteFragment : Fragment() {
     ): View {
         binding = FragmentRouteBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -57,7 +56,6 @@ class RouteFragment : Fragment() {
         routeFragmentViewModel.routesListLiveData.observe(viewLifecycleOwner, Observer<List<Route>> {
             routesDataBase = it
         })
-
     }
 
     private fun initSearchView() {
@@ -95,8 +93,6 @@ class RouteFragment : Fragment() {
             adapter = routesAdapter
             addItemDecoration(TopSpacingItemDecoration(5))  //Применяю декоратор для отступов
             layoutManager = LinearLayoutManager(requireContext())
-
         }
     }
-
 }
