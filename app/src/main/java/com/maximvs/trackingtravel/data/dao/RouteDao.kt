@@ -1,4 +1,4 @@
-package com.maximvs.trackingtravel.dao
+package com.maximvs.trackingtravel.data.dao
 
 import androidx.room.Dao
 import androidx.room.Insert

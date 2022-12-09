@@ -2,7 +2,7 @@ package com.maximvs.trackingtravel.di.modules
 
 import android.content.Context
 import androidx.room.Room
-import com.maximvs.trackingtravel.dao.RouteDao
+import com.maximvs.trackingtravel.data.dao.RouteDao
 import com.maximvs.trackingtravel.data.MainRepository
 import com.maximvs.trackingtravel.data.db.AppDatabase
 import dagger.Module

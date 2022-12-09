@@ -56,12 +56,6 @@ class DetailsFragment : Fragment() {
 
         binding.tvSearch.text = route.title
         binding.title.text = route.title
-
-        Glide.with(this)
-            .load(route.photos[0].uri)
-            .centerCrop()
-            .into(binding.viewPager2)
-
         binding.duration.text = route.duration
         binding.distanceRoute.text = route.distanceRoute
         binding.heightPeak.text = route.heightPeak
