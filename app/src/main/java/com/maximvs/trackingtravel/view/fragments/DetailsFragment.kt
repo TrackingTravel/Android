@@ -50,7 +50,6 @@ class DetailsFragment : Fragment() {
         pagerAdapter.addItems(pagerItems)
     }
 
-
     private fun setRoutesDetails() {
         route = arguments?.get("route") as Route
 
@@ -71,8 +70,6 @@ class DetailsFragment : Fragment() {
             intent.action = Intent.ACTION_VIEW
             Uri.parse(route.linkToMap)
         }
-
-
     }
 }
 
