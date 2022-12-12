@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import com.maximvs.trackingtravel.DescriptionFragment
 import com.maximvs.trackingtravel.R
 import com.maximvs.trackingtravel.databinding.ActivityMainBinding
 import com.maximvs.trackingtravel.data.entity.Route
@@ -42,7 +43,6 @@ class MainActivity : AppCompatActivity() {
 
 
     fun startRouteFragment() {
-
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_container, RouteFragment())
@@ -63,6 +63,19 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
+    fun startDescriptionFragment(description: String) {
+        val bundle = Bundle()
+        bundle.putString("input", description)
+        val frag2 = DescriptionFragment()
+        frag2.arguments = bundle
+
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.fragment_container, frag2)
+            .addToBackStack(null)
+            .commit()
+    }
+
     private fun checkFragmentExistence(tag: String): Fragment? =
         supportFragmentManager.findFragmentByTag(tag)
 
@@ -75,7 +88,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun removeDetailsFragment() {
-
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_container, RouteFragment())

@@ -10,6 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestBuilder
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
+import com.maximvs.trackingtravel.R
 import com.maximvs.trackingtravel.databinding.FragmentDetailsBinding
 import com.maximvs.trackingtravel.data.entity.Route
 import com.maximvs.trackingtravel.view.MainActivity
@@ -35,6 +38,10 @@ class DetailsFragment : Fragment() {
 
         binding.btnDetailBack.setOnClickListener {
             (activity as MainActivity).removeDetailsFragment()
+        }
+
+        binding.tvDetShowDesc.setOnClickListener {
+            (activity as MainActivity).startDescriptionFragment(binding.description.text.toString())
         }
 
         //Создаем адаптер
