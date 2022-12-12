@@ -56,6 +56,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/f_det_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabIndicatorColor="@color/orange"
+                app:tabIndicatorHeight="4dp"/>
+
+
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/viewPager2"
                 android:layout_width="match_parent"
