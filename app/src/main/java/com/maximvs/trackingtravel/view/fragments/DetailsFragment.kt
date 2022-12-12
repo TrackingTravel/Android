@@ -55,6 +55,10 @@ class DetailsFragment : Fragment() {
 
         //Передаем список в адаптер
         pagerAdapter.addItems(pagerItems)
+
+        TabLayoutMediator(binding.fDetTabs, binding.viewPager2) { tab, position ->
+            tab.text = "TAB ${(position + 1)}"
+        }.attach()
     }
 
     private fun setRoutesDetails() {
