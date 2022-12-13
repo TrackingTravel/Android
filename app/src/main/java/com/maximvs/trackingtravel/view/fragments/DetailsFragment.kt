@@ -10,6 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestBuilder
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
+import com.maximvs.trackingtravel.R
 import com.maximvs.trackingtravel.databinding.FragmentDetailsBinding
 import com.maximvs.trackingtravel.data.entity.Route
 import com.maximvs.trackingtravel.view.MainActivity
@@ -37,6 +40,10 @@ class DetailsFragment : Fragment() {
             (activity as MainActivity).removeDetailsFragment()
         }
 
+        binding.tvDetShowDesc.setOnClickListener {
+            (activity as MainActivity).startDescriptionFragment(binding.description.text.toString())
+        }
+
         //Создаем адаптер
         val pagerAdapter = ViewPagerAdapter()
 
@@ -48,8 +55,11 @@ class DetailsFragment : Fragment() {
 
         //Передаем список в адаптер
         pagerAdapter.addItems(pagerItems)
-    }
 
+        TabLayoutMediator(binding.fDetTabs, binding.viewPager2) { tab, position ->
+            tab.text = "TAB ${(position + 1)}"
+        }.attach()
+    }
 
     private fun setRoutesDetails() {
         route = arguments?.get("route") as Route
@@ -71,8 +81,6 @@ class DetailsFragment : Fragment() {
             intent.action = Intent.ACTION_VIEW
             Uri.parse(route.linkToMap)
         }
-
-
     }
 }
 

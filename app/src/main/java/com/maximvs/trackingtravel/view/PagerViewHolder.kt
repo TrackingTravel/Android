@@ -10,7 +10,6 @@ import com.maximvs.trackingtravel.databinding.ItemViewPagerBinding
 class PagerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val binding = ItemViewPagerBinding.bind(itemView)
 
-
     //В этом методе мы передаем данные из TT_Photo в нашу верстку item.xml
     fun bind(item: TT_Photo) = with(binding) {
 
