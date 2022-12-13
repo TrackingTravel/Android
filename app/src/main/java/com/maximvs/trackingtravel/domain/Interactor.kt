@@ -19,7 +19,6 @@ class Interactor(private val repo: MainRepository, private val retrofitService: 
                 response: Response<List<TT_Route>>
             ) {
                 val list = Converter.convertApiListToDtoList(response.body())
-                //Кладем фильмы в бд
                 repo.putToDb(list)
                 callback.onSuccess(list)
             }
