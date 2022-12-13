@@ -2,12 +2,10 @@ package com.maximvs.trackingtravel.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import com.maximvs.trackingtravel.DescriptionFragment
 import com.maximvs.trackingtravel.R
-import com.maximvs.trackingtravel.databinding.ActivityMainBinding
 import com.maximvs.trackingtravel.data.entity.Route
+import com.maximvs.trackingtravel.databinding.ActivityMainBinding
 import com.maximvs.trackingtravel.view.fragments.DetailsFragment
 import com.maximvs.trackingtravel.view.fragments.RequestFragment
 import com.maximvs.trackingtravel.view.fragments.RouteFragment
@@ -76,17 +74,6 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    private fun checkFragmentExistence(tag: String): Fragment? =
-        supportFragmentManager.findFragmentByTag(tag)
-
-    private fun changeFragment(fragment: Fragment, tag: String) {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragment_container, fragment, tag)
-            .addToBackStack(null)
-            .commit()
-    }
-
     fun removeDetailsFragment() {
         supportFragmentManager
             .beginTransaction()
@@ -96,6 +83,5 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-private fun FragmentTransaction.remove(): FragmentTransaction {
-    TODO("Not yet implemented")
-}
+
+

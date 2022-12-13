@@ -9,8 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.maximvs.trackingtravel.databinding.FragmentRouteBinding
+import com.maximvs.trackingtravel.R
 import com.maximvs.trackingtravel.data.entity.Route
+import com.maximvs.trackingtravel.databinding.FragmentRouteBinding
 import com.maximvs.trackingtravel.view.MainActivity
 import com.maximvs.trackingtravel.view.RouteListRecyclerAdapter
 import com.maximvs.trackingtravel.view.TopSpacingItemDecoration
@@ -45,6 +46,7 @@ class RouteFragment : Fragment() {
     ): View {
         binding = FragmentRouteBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -53,9 +55,14 @@ class RouteFragment : Fragment() {
         initSearchView()
 
         initRecyckler()
-        routeFragmentViewModel.routesListLiveData.observe(viewLifecycleOwner, Observer<List<Route>> {
-            routesDataBase = it
-        })
+        routeFragmentViewModel.routesListLiveData.observe(
+            viewLifecycleOwner,
+            Observer<List<Route>> {
+                routesDataBase = it
+            })
+
+        initNavigation()
+
     }
 
     private fun initSearchView() {
@@ -93,6 +100,42 @@ class RouteFragment : Fragment() {
             adapter = routesAdapter
             addItemDecoration(TopSpacingItemDecoration(5))  //Применяю декоратор для отступов
             layoutManager = LinearLayoutManager(requireContext())
+
         }
+    }
+
+    private fun initNavigation() {
+        binding.bottomNavigation.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.route -> {
+                    val tag = "route"
+                    val fragment = checkFragmentExistence(tag)
+                    //В первом параметре, если фрагмент не найден и метод вернул null, то с помощью
+                    //элвиса мы вызываем создание нвого фрагмента
+                    changeFragment(fragment ?: RouteFragment(), tag)
+                    true
+                }
+                R.id.settings -> {
+                    val tag = "settings"
+                    val fragment = checkFragmentExistence(tag)
+                    changeFragment(fragment ?: SettingsFragment(), tag)
+                    true
+                }
+                else -> false
+            }
+        }
+    }
+
+    //Ищем фрагмент по тэгу, если он есть то возвращаем его, если нет - то null
+    private fun checkFragmentExistence(tag: String): Fragment? =
+        childFragmentManager.findFragmentByTag(tag)
+
+    private fun changeFragment(fragment: Fragment, tag: String) {
+        childFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment, tag)
+            .addToBackStack(null)
+            .commit()
+
     }
 }
