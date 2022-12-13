@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.maximvs.trackingtravel.R
 import com.maximvs.trackingtravel.databinding.FragmentRouteBinding
 import com.maximvs.trackingtravel.data.entity.Route
 import com.maximvs.trackingtravel.view.MainActivity
@@ -37,6 +38,8 @@ class RouteFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
+
+
     }
 
     override fun onCreateView(
@@ -45,6 +48,8 @@ class RouteFragment : Fragment() {
     ): View {
         binding = FragmentRouteBinding.inflate(inflater, container, false)
         return binding.root
+
+
 
     }
 
@@ -57,6 +62,7 @@ class RouteFragment : Fragment() {
         routeFragmentViewModel.routesListLiveData.observe(viewLifecycleOwner, Observer<List<Route>> {
             routesDataBase = it
         })
+
 
     }
 
@@ -98,5 +104,9 @@ class RouteFragment : Fragment() {
 
         }
     }
+
+
+
+
 
 }

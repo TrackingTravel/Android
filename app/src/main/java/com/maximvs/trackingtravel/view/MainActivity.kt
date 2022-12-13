@@ -5,12 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.maximvs.trackingtravel.R
-import com.maximvs.trackingtravel.databinding.ActivityMainBinding
 import com.maximvs.trackingtravel.data.entity.Route
-import com.maximvs.trackingtravel.view.fragments.DetailsFragment
-import com.maximvs.trackingtravel.view.fragments.RequestFragment
-import com.maximvs.trackingtravel.view.fragments.RouteFragment
-import com.maximvs.trackingtravel.view.fragments.StartFragment
+import com.maximvs.trackingtravel.databinding.ActivityMainBinding
+import com.maximvs.trackingtravel.view.fragments.*
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,12 +17,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //Инициализируем объект
         binding = ActivityMainBinding.inflate(layoutInflater)
-        //Передаем его в метод
         setContentView(binding.root)
 
-        //initNavigation()
         supportFragmentManager
             .beginTransaction()
             .add(R.id.fragment_container, StartFragment())
@@ -39,7 +33,6 @@ class MainActivity : AppCompatActivity() {
             .addToBackStack(null)
             .commit()
     }
-
 
     fun startRouteFragment() {
 
@@ -63,6 +56,16 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
+    fun removeDetailsFragment() {
+
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, RouteFragment())
+            .addToBackStack(null)
+            .commit()
+    }
+
+
     private fun checkFragmentExistence(tag: String): Fragment? =
         supportFragmentManager.findFragmentByTag(tag)
 
@@ -74,16 +77,9 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    fun removeDetailsFragment() {
 
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragment_container, RouteFragment())
-            .addToBackStack(null)
-            .commit()
+    private fun FragmentTransaction.remove(): FragmentTransaction {
+        TODO("Not yet implemented")
     }
 }
 
-private fun FragmentTransaction.remove(): FragmentTransaction {
-    TODO("Not yet implemented")
-}
