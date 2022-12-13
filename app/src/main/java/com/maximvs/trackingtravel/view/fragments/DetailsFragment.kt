@@ -10,11 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestBuilder
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.maximvs.trackingtravel.R
-import com.maximvs.trackingtravel.databinding.FragmentDetailsBinding
 import com.maximvs.trackingtravel.data.entity.Route
+import com.maximvs.trackingtravel.databinding.FragmentDetailsBinding
 import com.maximvs.trackingtravel.view.MainActivity
 import com.maximvs.trackingtravel.view.ViewPagerAdapter
 
@@ -77,9 +75,11 @@ class DetailsFragment : Fragment() {
             .into(binding.detMap)
 
         binding.btnOpenMap.setOnClickListener {
-            val intent = Intent()
-            intent.action = Intent.ACTION_VIEW
-            Uri.parse(route.linkToMap)
+            val geoUri = Uri.parse(route.linkToMap)
+            val mapIntent = Intent(Intent.ACTION_VIEW, geoUri)
+            startActivity(mapIntent)
+
+
         }
     }
 }
