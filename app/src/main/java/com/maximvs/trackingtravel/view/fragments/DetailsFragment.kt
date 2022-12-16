@@ -14,7 +14,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.maximvs.trackingtravel.data.entity.Route
 import com.maximvs.trackingtravel.databinding.FragmentDetailsBinding
 import com.maximvs.trackingtravel.view.MainActivity
-import com.maximvs.trackingtravel.view.ViewPagerAdapter
+import com.maximvs.trackingtravel.view.adapters.ViewPagerAdapter
 
 
 class DetailsFragment : Fragment() {
@@ -38,9 +38,9 @@ class DetailsFragment : Fragment() {
             (activity as MainActivity).removeDetailsFragment()
         }
 
-        binding.tvDetShowDesc.setOnClickListener {
+       /* binding.tvDetShowDesc.setOnClickListener {
             (activity as MainActivity).startDescriptionFragment(binding.description.text.toString())
-        }
+        } */
 
         //Создаем адаптер
         val pagerAdapter = ViewPagerAdapter()
