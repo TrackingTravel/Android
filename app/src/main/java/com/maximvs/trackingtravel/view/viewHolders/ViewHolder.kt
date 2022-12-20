@@ -1,4 +1,4 @@
-package com.maximvs.trackingtravel.view
+package com.maximvs.trackingtravel.view.viewHolders
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

@@ -1,10 +1,11 @@
-package com.maximvs.trackingtravel.view
+package com.maximvs.trackingtravel.view.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.maximvs.trackingtravel.R
 import com.maximvs.trackingtravel.data.entity.TT_Photo
+import com.maximvs.trackingtravel.view.viewHolders.PagerViewHolder
 
 class ViewPagerAdapter : RecyclerView.Adapter<PagerViewHolder>() {
     //Здесь хранится список наших объектов с цветом и текстом

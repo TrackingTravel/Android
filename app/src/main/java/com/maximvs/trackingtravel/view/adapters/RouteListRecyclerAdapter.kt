@@ -1,4 +1,4 @@
-package com.maximvs.trackingtravel.view
+package com.maximvs.trackingtravel.view.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.maximvs.trackingtravel.R
 import com.maximvs.trackingtravel.data.entity.Route
+import com.maximvs.trackingtravel.view.viewHolders.ViewHolder
 
 
 class RouteListRecyclerAdapter(private val clickListener: OnItemClickListener) :

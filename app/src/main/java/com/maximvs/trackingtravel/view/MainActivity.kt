@@ -2,14 +2,11 @@ package com.maximvs.trackingtravel.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.maximvs.trackingtravel.DescriptionFragment
+import androidx.fragment.app.Fragment
 import com.maximvs.trackingtravel.R
 import com.maximvs.trackingtravel.data.entity.Route
 import com.maximvs.trackingtravel.databinding.ActivityMainBinding
-import com.maximvs.trackingtravel.view.fragments.DetailsFragment
-import com.maximvs.trackingtravel.view.fragments.RequestFragment
-import com.maximvs.trackingtravel.view.fragments.RouteFragment
-import com.maximvs.trackingtravel.view.fragments.StartFragment
+import com.maximvs.trackingtravel.view.fragments.*
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -19,15 +16,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //Инициализируем объект
         binding = ActivityMainBinding.inflate(layoutInflater)
-        //Передаем его в метод
         setContentView(binding.root)
 
-        //initNavigation()
+        initNavigation()
+
+
         supportFragmentManager
             .beginTransaction()
-            .add(R.id.fragment_container, StartFragment())
+            .add(R.id.fragment_container, RouteFragment())
             .commit()
     }
 
@@ -41,6 +38,9 @@ class MainActivity : AppCompatActivity() {
 
 
     fun startRouteFragment() {
+
+        initNavigation()
+
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_container, RouteFragment())
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    fun startDescriptionFragment(description: String) {
+  /*  fun startDescriptionFragment(description: String) {
         val bundle = Bundle()
         bundle.putString("input", description)
         val frag2 = DescriptionFragment()
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
             .add(R.id.fragment_container, frag2)
             .addToBackStack(null)
             .commit()
-    }
+    } */
 
     fun removeDetailsFragment() {
         supportFragmentManager
@@ -80,6 +80,41 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fragment_container, RouteFragment())
             .addToBackStack(null)
             .commit()
+    }
+
+    private fun initNavigation() {
+        binding.bottomNavigation.setOnItemSelectedListener  {
+            when (it.itemId) {
+                R.id.route -> {
+                    val tag = "route"
+                    val fragment = checkFragmentExistence(tag)
+                    //В первом параметре, если фрагмент не найден и метод вернул null, то с помощью
+                    //элвиса мы вызываем создание нвого фрагмента
+                    changeFragment(fragment ?: RouteFragment(), tag)
+                    true
+                }
+                R.id.settings -> {
+                    val tag = "settings"
+                    val fragment = checkFragmentExistence(tag)
+                    changeFragment(fragment ?: SettingsFragment(), tag)
+                    true
+                }
+                else -> false
+            }
+        }
+    }
+
+    //Ищем фрагмент по тэгу, если он есть то возвращаем его, если нет - то null
+    private fun checkFragmentExistence(tag: String): Fragment? =
+        supportFragmentManager.findFragmentByTag(tag)
+
+    private fun changeFragment(fragment: Fragment, tag: String) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment, tag)
+            .addToBackStack(null)
+            .commit()
+
     }
 }
 
