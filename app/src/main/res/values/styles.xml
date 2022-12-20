@@ -15,6 +15,7 @@
     <style name="Image_Start">
         <item name="android:layout_width">400dp</item>
         <item name="android:layout_height">550dp</item>
+        <item name="android:scaleType">centerCrop</item>
     </style>
 
     <style name="text_view_style">

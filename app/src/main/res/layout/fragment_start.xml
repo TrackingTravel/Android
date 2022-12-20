@@ -22,6 +22,7 @@
         <ImageView
             android:id="@+id/startImage"
             style="@style/Image_Start"
+            android:stateListAnimator="@null"
             android:background="@drawable/start_photo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
