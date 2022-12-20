@@ -8,19 +8,26 @@ import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.maximvs.trackingtravel.R
+import com.maximvs.trackingtravel.databinding.ActivityStartBinding
 import com.maximvs.trackingtravel.view.MainActivity
 
 
 class StartActivity : AppCompatActivity() {
-
-    //private lateinit var binding: ActivityStartBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         makeFullScreen()
 
-        setContentView(R.layout.fragment_start)
+        val binding = ActivityStartBinding.inflate(layoutInflater)
+
+        setContentView(R.layout.activity_start)
+
+        /*
+        binding.btnBtn.setOnClickListener{
+            val intent = Intent(this@StartActivity, MainActivity::class.java)
+            startActivity(intent)
+        } */
 
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, MainActivity:: class.java))

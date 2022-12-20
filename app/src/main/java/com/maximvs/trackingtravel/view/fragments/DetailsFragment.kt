@@ -7,9 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
-import com.bumptech.glide.RequestBuilder
 import com.google.android.material.tabs.TabLayoutMediator
 import com.maximvs.trackingtravel.data.entity.Route
 import com.maximvs.trackingtravel.databinding.FragmentDetailsBinding
@@ -37,10 +35,6 @@ class DetailsFragment : Fragment() {
         binding.btnDetailBack.setOnClickListener {
             (activity as MainActivity).removeDetailsFragment()
         }
-
-       /* binding.tvDetShowDesc.setOnClickListener {
-            (activity as MainActivity).startDescriptionFragment(binding.description.text.toString())
-        } */
 
         //Создаем адаптер
         val pagerAdapter = ViewPagerAdapter()
@@ -84,6 +78,3 @@ class DetailsFragment : Fragment() {
     }
 }
 
-private fun <TranscodeType> RequestBuilder<TranscodeType>.into(viewPager2: ViewPager2) {
-
-}
