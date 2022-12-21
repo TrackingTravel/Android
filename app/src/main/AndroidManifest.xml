@@ -19,28 +19,33 @@
         android:theme="@style/Theme.TrackingTravel"
         tools:targetApi="31">
 
-        <activity android:name=".view.fragments.StartActivity"
+        <activity
+            android:name=".view.fragments.StartActivity"
             android:exported="true"
             android:screenOrientation="fullSensor">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
-    <activity
-        android:name=".view.MainActivity"
-        android:exported="false"
-        android:screenOrientation="fullSensor">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="false"
+            android:screenOrientation="fullSensor">
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
 
         <meta-data
-            android:name="android.app.lib_name"
-            android:value="" />
-    </activity>
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
 
-    <meta-data
-        android:name="preloaded_fonts"
-        android:resource="@array/preloaded_fonts" />
-</application>
-
-    </manifest>
+</manifest>
