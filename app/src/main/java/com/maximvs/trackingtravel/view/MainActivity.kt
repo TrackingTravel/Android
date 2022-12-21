@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initNavigation()
+        //initNavigation()
 
 
         supportFragmentManager
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
     fun startRouteFragment() {
 
-        initNavigation()
+        // initNavigation()
 
         supportFragmentManager
             .beginTransaction()
@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    private fun initNavigation() {
+    /* fun initNavigation() {
         binding.bottomNavigation.setOnItemSelectedListener  {
             when (it.itemId) {
                 R.id.route -> {
@@ -115,7 +115,7 @@ class MainActivity : AppCompatActivity() {
             .addToBackStack(null)
             .commit()
 
-    }
+    } */
 }
 
 
