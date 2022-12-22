@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.favorites -> {
-                    val tag = "settings"
+                    val tag = "favorites"
                     val fragment = checkFragmentExistence(tag)
                     changeFragment(fragment ?: FavoritesFragment(), tag)
                     true

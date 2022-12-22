@@ -7,7 +7,6 @@
     android:background="@color/white"
     android:fitsSystemWindows="true"
     tools:context=".view.fragments.DetailsFragment">
-
     <LinearLayout
         android:id="@+id/ll_rd"
         android:layout_width="match_parent"
@@ -25,7 +24,6 @@
             android:orientation="vertical"
             android:layout_marginStart="20dp"
             android:background="@drawable/ic_baseline_arrow_back_24" />
-
         <TextView
             android:id="@+id/tv_search"
             style="@style/et_route_details_style"
@@ -37,7 +35,6 @@
             android:paddingEnd="12dp"
             android:paddingBottom="12dp"
             tools:text="Title" />
-
     </LinearLayout>
 
     <ScrollView
@@ -64,10 +61,11 @@
                 android:id="@+id/details_fab_favorites"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
                 app:borderWidth="0dp"
-                android:backgroundTint="@color/light_grey"
-                app:layout_gravity="right"
+                android:backgroundTint="@android:color/transparent"
+                android:layout_gravity="end|bottom"
                 app:srcCompat="@drawable/ic_baseline_favorite_border_24"
                 app:tint="@color/orange"/>
 
@@ -78,7 +76,6 @@
                 android:layout_height="4dp"
                 app:tabIndicatorColor="@color/orange"
                 app:tabIndicatorHeight="4dp" />
-
             <TextView
                 android:id="@+id/title"
                 android:layout_width="match_parent"
@@ -90,7 +87,6 @@
                 android:textSize="24sp"
                 android:textStyle="bold"
                 tools:text="Title" />
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/tv_details_more"
                 android:layout_width="match_parent"
@@ -99,7 +95,6 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/background_details">
-
                 <TextView
                     android:id="@+id/tv_det_1"
                     android:layout_width="156dp"
@@ -112,7 +107,6 @@
                     app:layout_constraintEnd_toStartOf="@id/duration"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
                 <TextView
                     android:id="@+id/duration"
                     android:layout_width="124dp"
@@ -126,7 +120,6 @@
                     app:layout_constraintStart_toEndOf="@id/tv_det_1"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="Duration" />
-
                 <View
                     android:id="@+id/tv_line_1"
                     android:layout_width="296dp"
@@ -138,7 +131,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
                 <TextView
                     android:id="@+id/tv_det_3"
                     android:layout_width="156dp"
@@ -151,7 +143,6 @@
                     app:layout_constraintEnd_toStartOf="@id/distanceRoute"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tv_line_1" />
-
                 <TextView
                     android:id="@+id/distanceRoute"
                     android:layout_width="124dp"
@@ -165,7 +156,6 @@
                     app:layout_constraintStart_toEndOf="@id/tv_det_3"
                     app:layout_constraintTop_toTopOf="@id/tv_line_1"
                     tools:text="Distance Route" />
-
                 <View
                     android:id="@+id/tv_line_2"
                     android:layout_width="296dp"
@@ -177,7 +167,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tv_line_1" />
-
                 <TextView
                     android:id="@+id/tv_det_5"
                     android:layout_width="156dp"
@@ -190,7 +179,6 @@
                     app:layout_constraintEnd_toStartOf="@id/heightPeak"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tv_line_2" />
-
                 <TextView
                     android:id="@+id/heightPeak"
                     android:layout_width="124dp"
@@ -204,20 +192,16 @@
                     app:layout_constraintStart_toEndOf="@id/tv_det_5"
                     app:layout_constraintTop_toTopOf="@id/tv_line_2"
                     tools:text="HeightPeak" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
-
             <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
                 <LinearLayout
                     android:id="@+id/scene_root"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
                     <TextView
                         android:id="@+id/description"
                         android:layout_width="match_parent"
@@ -233,8 +217,6 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tv_det_5"
                         tools:text="@tools:sample/lorem/random" />
-
-
                     <TextView
                         android:id="@+id/tv_det_show_desc"
                         android:layout_width="match_parent"
@@ -248,10 +230,8 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/description" />
-
                 </LinearLayout>
             </androidx.core.widget.NestedScrollView>
-
             <ImageView
                 android:id="@+id/det_map"
                 android:layout_width="match_parent"
@@ -265,10 +245,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_det_show_desc"
                 app:srcCompat="@drawable/request_photo" />
-
         </LinearLayout>
     </ScrollView>
-
     <Button
         android:id="@+id/btn_open_map"
         style="@style/Button_Start"
@@ -284,7 +262,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_bias="1" />
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
