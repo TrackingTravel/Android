@@ -22,6 +22,7 @@ data class Route(
     @ColumnInfo(name = "duration")val duration: String,
     @ColumnInfo(name = "mapPhoto")val mapPhoto: List<MapPhoto>,
     @ColumnInfo(name = "photos")val photos: List<TT_Photo>,
-    @ColumnInfo(name = "country")val country: Country
+    @ColumnInfo(name = "country")val country: Country,
+    var isInFavorites: Boolean = false
 
 ) : Parcelable
