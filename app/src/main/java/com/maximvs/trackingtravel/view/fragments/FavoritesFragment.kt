@@ -25,6 +25,7 @@ class FavoritesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //Получаем список при транзакции фрагмента
         val favoritesList: List<Route> = emptyList()
 
 
@@ -34,11 +35,15 @@ class FavoritesFragment : Fragment() {
                     (requireActivity() as MainActivity).launchDetailsFragment(route)
                 }
             })
+            //Присваиваем адаптер
             adapter = routesAdapter
+            //Присвои layoutmanager
             layoutManager = LinearLayoutManager(requireContext())
-            val decorator = TopSpacingItemDecoration(5)
+            //Применяем декоратор для отступов
+            val decorator = TopSpacingItemDecoration(8)
             addItemDecoration(decorator)
         }
+        //Кладем нашу БД в RV
         routesAdapter.addItems(favoritesList)
     }
 }
