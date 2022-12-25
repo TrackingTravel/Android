@@ -8,6 +8,7 @@
     <string name="route">Route</string>
     <string name="duration">Duration</string>
     <string name="setting">Setting</string>
+    <string name="favorites">Favorites</string>
     <string name="route_name">Route name</string>
     <string name="open_map">Open map</string>
     <string name="distance">Distance</string>
@@ -16,7 +17,9 @@
     <string name="toast_denied">Permission denied</string>
     <string name="alert_dialog_title">Permission denied</string>
     <string name="toast_denied_forever">Permission denied forever</string>
-    <string name="alert_dialog_message">Permission denied forever [...]</string>
+    <string name="alert_dialog_message">Permission denied permanently.
+      You can change this on your phone.
+      Want to go to settings?</string>
     <string name="toast_GPS_on">Geolocation enabled</string>
     <string name="alert_dialog_set_positive">Go over</string>
     <string name="start_text_2">Tracking Travel allows you easily find routes in Montenegro</string>

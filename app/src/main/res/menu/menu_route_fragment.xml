@@ -17,5 +17,10 @@
         android:icon="@drawable/ic_outline_settings_24"
         android:title="@string/setting"
         app:showAsAction="withText"/>
+    <item
+        android:id="@+id/favorites"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        android:title="@string/favorites"
+        app:showAsAction="withText"/>
 
 </menu>

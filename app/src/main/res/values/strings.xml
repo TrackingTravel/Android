@@ -9,6 +9,7 @@
     <string name="allow">Разрешить</string>
     <string name="ignore">Пропустить</string>
     <string name="route">Маршруты</string>
+    <string name="favorites">Избранное</string>
     <string name="duration">Длительность</string>
     <string name="setting">Настройки</string>
     <string name="route_name">Название маршрута</string>

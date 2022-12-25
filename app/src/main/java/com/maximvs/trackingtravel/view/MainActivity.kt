@@ -19,8 +19,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //initNavigation()
-
+        initNavigation()
 
         supportFragmentManager
             .beginTransaction()
@@ -38,8 +37,6 @@ class MainActivity : AppCompatActivity() {
 
 
     fun startRouteFragment() {
-
-        // initNavigation()
 
         supportFragmentManager
             .beginTransaction()
@@ -61,19 +58,6 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-  /*  fun startDescriptionFragment(description: String) {
-        val bundle = Bundle()
-        bundle.putString("input", description)
-        val frag2 = DescriptionFragment()
-        frag2.arguments = bundle
-
-        supportFragmentManager
-            .beginTransaction()
-            .add(R.id.fragment_container, frag2)
-            .addToBackStack(null)
-            .commit()
-    } */
-
     fun removeDetailsFragment() {
         supportFragmentManager
             .beginTransaction()
@@ -82,8 +66,8 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    /* fun initNavigation() {
-        binding.bottomNavigation.setOnItemSelectedListener  {
+    fun initNavigation() {
+        binding.bottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.route -> {
                     val tag = "route"
@@ -99,12 +83,19 @@ class MainActivity : AppCompatActivity() {
                     changeFragment(fragment ?: SettingsFragment(), tag)
                     true
                 }
+                R.id.favorites -> {
+                    val tag = "favorites"
+                    val fragment = checkFragmentExistence(tag)
+                    changeFragment(fragment ?: FavoritesFragment(), tag)
+                    true
+                }
                 else -> false
             }
+
         }
     }
 
-    //Ищем фрагмент по тэгу, если он есть то возвращаем его, если нет - то null
+
     private fun checkFragmentExistence(tag: String): Fragment? =
         supportFragmentManager.findFragmentByTag(tag)
 
@@ -115,8 +106,9 @@ class MainActivity : AppCompatActivity() {
             .addToBackStack(null)
             .commit()
 
-    } */
+    }
 }
+
 
 
 

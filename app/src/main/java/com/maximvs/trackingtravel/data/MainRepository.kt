@@ -6,11 +6,11 @@ import java.util.concurrent.Executors
 
 
 class MainRepository
-    constructor(
+constructor(
     private val routeDao: RouteDao
-    ) {
-
+) {
     fun putToDb(routes: List<Route>) {
+        //Запросы в бд должны быть в отдельном потоке
         Executors.newSingleThreadExecutor().execute {
             routeDao.insertAll(routes)
         }
