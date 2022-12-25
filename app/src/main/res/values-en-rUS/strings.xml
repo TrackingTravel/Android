@@ -22,4 +22,5 @@
     <string name="start_text_2">Tracking Travel allows you easily find routes in Montenegro</string>
     <string name="req_text_1">Grant access to your phone\'s GPS</string>
     <string name="req_text_2">Your location will be used to display your position on the map</string>
+    <string name="uploaded">Uploaded</string>
 </resources>

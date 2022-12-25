@@ -6,7 +6,6 @@
     android:id="@+id/item_container"
     android:layout_width="match_parent"
     android:layout_height="400dp"
-    android:elevation="2dp"
     app:cardCornerRadius="15dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,7 +35,7 @@
             android:layout_marginEnd="12dp"
             android:layout_marginBottom="40dp"
             android:textColor="@color/white"
-            android:textSize="22sp"
+            android:textSize="22dp"
             app:layout_constraintBottom_toBottomOf="@+id/photo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +59,7 @@
             android:layout_marginStart="6dp"
             android:layout_marginBottom="17dp"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="12dp"
             app:layout_constraintBottom_toBottomOf="@+id/photo"
             app:layout_constraintStart_toEndOf="@+id/iv_rv_item_1"
             app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
@@ -84,7 +83,7 @@
             android:layout_marginStart="6dp"
             android:layout_marginBottom="17dp"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="12dp"
             app:layout_constraintBottom_toBottomOf="@+id/photo"
             app:layout_constraintStart_toEndOf="@+id/iv_rv_item_2"
             app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"
@@ -108,7 +107,7 @@
             android:layout_marginStart="6dp"
             android:layout_marginBottom="17dp"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="12dp"
             app:layout_constraintBottom_toBottomOf="@+id/photo"
             app:layout_constraintStart_toEndOf="@+id/iv_rv_item_3"
             app:layout_constraintTop_toBottomOf="@+id/tv_rv_item_title"

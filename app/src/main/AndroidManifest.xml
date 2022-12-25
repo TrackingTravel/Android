@@ -22,7 +22,7 @@
         <activity
             android:name=".view.fragments.StartActivity"
             android:exported="true"
-            android:screenOrientation="fullSensor">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -34,9 +34,10 @@
         </activity>
 
         <activity
+            android:windowSoftInputMode="adjustNothing"
             android:name=".view.MainActivity"
             android:exported="false"
-            android:screenOrientation="fullSensor">
+            android:screenOrientation="portrait">
 
             <meta-data
                 android:name="android.app.lib_name"

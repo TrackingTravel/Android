@@ -8,6 +8,11 @@
         app:showAsAction="withText"
         app:background="@drawable/background_home_icon"/>
     <item
+        android:id="@+id/uploaded"
+        android:icon="@drawable/ic_baseline_save_alt_24"
+        android:title="@string/uploaded"
+        app:showAsAction="withText"/>
+    <item
         android:id="@+id/settings"
         android:icon="@drawable/ic_outline_settings_24"
         android:title="@string/setting"

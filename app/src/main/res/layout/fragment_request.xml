@@ -35,7 +35,7 @@
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="25dp"
         android:text="@string/req_text_1"
-        android:textSize="24sp"
+        android:textSize="24dp"
         app:layout_constraintBottom_toTopOf="@+id/twReqTwo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -47,7 +47,7 @@
         android:layout_marginBottom="115dp"
         android:layout_marginEnd="50dp"
         android:text="@string/req_text_2"
-        android:textSize="16sp"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
