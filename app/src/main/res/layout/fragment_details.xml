@@ -62,6 +62,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="400dp" />
 
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/f_det_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                app:tabIndicatorColor="@color/orange"
+                app:tabIndicatorHeight="4dp" />
+
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/details_fab_favorites"
                 android:layout_width="wrap_content"
@@ -73,14 +81,6 @@
                 android:layout_gravity="end|bottom"
                 app:srcCompat="@drawable/ic_baseline_favorite_border_24"
                 app:tint="@color/orange"/>
-
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/f_det_tabs"
-                android:layout_width="match_parent"
-                android:layout_height="4dp"
-                app:tabIndicatorColor="@color/orange"
-                app:tabIndicatorHeight="4dp" />
 
             <TextView
                 android:id="@+id/title"
