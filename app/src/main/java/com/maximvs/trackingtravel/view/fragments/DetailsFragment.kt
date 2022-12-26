@@ -10,6 +10,7 @@ import android.transition.TransitionSet
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayoutMediator
@@ -37,6 +38,19 @@ class DetailsFragment : Fragment() {
 
         setRoutesDetails()
 
+        var expanded = false
+        val transitionSet = TransitionSet()
+            .addTransition(ChangeBounds())
+            .addTransition(ChangeImageTransform())
+
+        binding.tvDetShowDesc.setOnClickListener {
+            expanded = !expanded
+            TransitionManager.beginDelayedTransition(binding.sceneRoot, transitionSet)
+            val params: ViewGroup.LayoutParams =  binding.description.layoutParams
+            params.height = if (expanded) ViewGroup.LayoutParams.MATCH_PARENT else ViewGroup.LayoutParams.WRAP_CONTENT
+            binding.description.layoutParams = params
+        }
+
         binding.detailsFabFavorites.setOnClickListener {
             if (!route.isInFavorites) {
                 binding.detailsFabFavorites.setImageResource(R.drawable.ic_baseline_favorite_24)
@@ -47,69 +61,53 @@ class DetailsFragment : Fragment() {
             }
         }
 
-
-        var expanded = false
-        val transitionSet = TransitionSet()
-            .addTransition(ChangeBounds())
-            .addTransition(ChangeImageTransform())
-
-        binding.tvDetShowDesc.setOnClickListener {
-            expanded = !expanded
-            TransitionManager.beginDelayedTransition(binding.sceneRoot, transitionSet)
-            val params: ViewGroup.LayoutParams = binding.description.layoutParams
-            params.height =
-                if (expanded) ViewGroup.LayoutParams.MATCH_PARENT else ViewGroup.LayoutParams.WRAP_CONTENT
-            binding.description.layoutParams = params
-        }
-
         binding.btnDetailBack.setOnClickListener {
             (activity as MainActivity).removeDetailsFragment()
-
-
-            //Создаем адаптер
-            val pagerAdapter = ViewPagerAdapter()
-
-            //Привязываем созданный адаптер к нашему ViewPager, который у нас в разметке
-            binding.viewPager2.adapter = pagerAdapter
-
-            //Создаем список элементов, который передадим в адаптер
-            val pagerItems = route.photos
-
-            //Передаем список в адаптер
-            pagerAdapter.addItems(pagerItems)
-
-            TabLayoutMediator(binding.fDetTabs, binding.viewPager2) { tab, position ->
-                tab.text = "TAB ${(position + 1)}"
-            }.attach()
         }
+
+        //Создаем адаптер
+        val pagerAdapter = ViewPagerAdapter()
+
+        //Привязываем созданный адаптер к нашему ViewPager, который у нас в разметке
+        binding.viewPager2.adapter = pagerAdapter
+
+        //Создаем список элементов, который передадим в адаптер
+        val pagerItems = route.photos
+
+        //Передаем список в адаптер
+        pagerAdapter.addItems(pagerItems)
+
+        TabLayoutMediator(binding.fDetTabs, binding.viewPager2) { tab, position ->
+            tab.text = "TAB ${(position + 1)}"
+        }.attach()
     }
 
-        private fun setRoutesDetails() {
-            route = arguments?.get("route") as Route
+    private fun setRoutesDetails() {
+        route = arguments?.get("route") as Route
 
-            binding.tvSearch.text = route.title
-            binding.title.text = route.title
-            binding.duration.text = route.duration
-            binding.distanceRoute.text = route.distanceRoute
-            binding.heightPeak.text = route.heightPeak
-            binding.description.text = route.description
+        binding.tvSearch.text = route.title
+        binding.title.text = route.title
+        binding.duration.text = route.duration
+        binding.distanceRoute.text = route.distanceRoute
+        binding.heightPeak.text = route.heightPeak
+        binding.description.text = route.description
 
-            Glide.with(this)
-                .load(route.mapPhoto[0].uri)
-                .centerCrop()
-                .into(binding.detMap)
+        Glide.with(this)
+            .load(route.mapPhoto[0].uri)
+            .centerCrop()
+            .into(binding.detMap)
 
-            binding.btnOpenMap.setOnClickListener {
-                val geoUri = Uri.parse(route.linkToMap)
-                val mapIntent = Intent(Intent.ACTION_VIEW, geoUri)
-                startActivity(mapIntent)
-            }
-
-            binding.detailsFabFavorites.setImageResource(
-                if (route.isInFavorites) R.drawable.ic_baseline_favorite_24
-                else R.drawable.ic_baseline_favorite_border_24
-            )
-
+        binding.btnOpenMap.setOnClickListener {
+            val geoUri = Uri.parse(route.linkToMap)
+            val mapIntent = Intent(Intent.ACTION_VIEW, geoUri)
+            startActivity(mapIntent)
         }
+
+        binding.detailsFabFavorites.setImageResource(
+            if (route.isInFavorites) R.drawable.ic_baseline_favorite_24
+            else R.drawable.ic_baseline_favorite_border_24
+        )
+
     }
+}
 

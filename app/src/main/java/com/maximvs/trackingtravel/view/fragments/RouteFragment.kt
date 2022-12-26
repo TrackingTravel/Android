@@ -34,14 +34,12 @@ class RouteFragment : Fragment() {
             routesAdapter.addItems(field)
         }
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentRouteBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -61,6 +59,7 @@ class RouteFragment : Fragment() {
         binding.search.setOnClickListener {
             binding.search.isIconified = false
         }
+
         binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return true
@@ -92,7 +91,6 @@ class RouteFragment : Fragment() {
             adapter = routesAdapter
             addItemDecoration(TopSpacingItemDecoration(5))  //Применяю декоратор для отступов
             layoutManager = LinearLayoutManager(requireContext())
-
         }
     }
 }
