@@ -41,7 +41,7 @@
             android:paddingBottom="12dp"
             tools:text="Title" />
 
-        <android.widget.Button
+        <ImageView
             android:id="@+id/btn_detail_favorite"
             android:layout_width="25dp"
             android:layout_height="25dp"
