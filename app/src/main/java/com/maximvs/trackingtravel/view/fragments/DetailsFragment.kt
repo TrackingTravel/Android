@@ -103,6 +103,12 @@ class DetailsFragment : Fragment() {
             startActivity(mapIntent)
         }
 
+        binding.detMap.setOnClickListener {
+            val geoUri = Uri.parse(route.linkToMap)
+            val mapIntent = Intent(Intent.ACTION_VIEW, geoUri)
+            startActivity(mapIntent)
+        }
+
         binding.detailsFabFavorites.setImageResource(
             if (route.isInFavorites) R.drawable.ic_baseline_favorite_24
             else R.drawable.ic_baseline_favorite_border_24
