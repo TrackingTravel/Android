@@ -51,7 +51,7 @@ class DetailsFragment : Fragment() {
             binding.description.layoutParams = params
         }
 
-        binding.detailsFabFavorites.setOnClickListener {
+        /* binding.detailsFabFavorites.setOnClickListener {
             if (!route.isInFavorites) {
                 binding.detailsFabFavorites.setImageResource(R.drawable.ic_baseline_favorite_24)
                 route.isInFavorites = true
@@ -59,7 +59,7 @@ class DetailsFragment : Fragment() {
                 binding.detailsFabFavorites.setImageResource(R.drawable.ic_baseline_favorite_border_24)
                 route.isInFavorites = false
             }
-        }
+        } */
 
         binding.btnDetailBack.setOnClickListener {
             (activity as MainActivity).removeDetailsFragment()
@@ -109,10 +109,10 @@ class DetailsFragment : Fragment() {
             startActivity(mapIntent)
         }
 
-        binding.detailsFabFavorites.setImageResource(
+        /* binding.detailsFabFavorites.setImageResource(
             if (route.isInFavorites) R.drawable.ic_baseline_favorite_24
             else R.drawable.ic_baseline_favorite_border_24
-        )
+        ) */
 
     }
 }
